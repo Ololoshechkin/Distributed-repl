@@ -1,0 +1,155 @@
+Configuring network-transport-tcp-0.6.0...
+Preprocessing library for network-transport-tcp-0.6.0..
+Building library for network-transport-tcp-0.6.0..
+[1 of 2] Compiling Network.Transport.TCP.Internal ( src/Network/Transport/TCP/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Network/Transport/TCP/Internal.o )
+
+[;1msrc/Network/Transport/TCP/Internal.hs:83:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Monad’ is redundant
+      except perhaps to import instances from ‘Control.Monad’
+    To import instances alone, use: import Control.Monad()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m83 |[0m[0m [;1m[35mimport Control.Monad (forever, when)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:84:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘SomeException, bracketOnError, catch, mask_,
+                   onException, throwIO’
+    from module ‘Control.Exception’ is redundant[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m84 |[0m[0m [;1m[35mimport Control.Exception[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:96:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Word’ is redundant
+      except perhaps to import instances from ‘Data.Word’
+    To import instances alone, use: import Data.Word()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m96 |[0m[0m [;1m[35mimport Data.Word (Word32)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:223:7: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘bindSocket’ (imported from Network.Socket):
+    Deprecated: "use 'bind'"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m223 |[0m[0m       [;1m[35mN.bindSocket[0m[0m sock (N.addrAddress addr)
+[;1m[34m    |[0m[0m[;1m[35m       ^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:228:21: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘sock’ shadows the existing binding
+      bound at src/Network/Transport/TCP/Internal.hs:221:38[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m228 |[0m[0m           release (([;1m[35msock[0m[0m, _), socketClosed) =
+[;1m[34m    |[0m[0m[;1m[35m                     ^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:229:13: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m229 |[0m[0m             [;1m[35mN.sClose[0m[0m sock `finally` putMVar socketClosed ()
+[;1m[34m    |[0m[0m[;1m[35m             ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:232:24: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘sock’ shadows the existing binding
+      bound at src/Network/Transport/TCP/Internal.hs:221:38[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m232 |[0m[0m       let act restore ([;1m[35msock[0m[0m, sockAddr) = do
+[;1m[34m    |[0m[0m[;1m[35m                        ^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:247:14: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘sock’ shadows the existing binding
+      bound at src/Network/Transport/TCP/Internal.hs:221:38[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m247 |[0m[0m             ([;1m[35msock[0m[0m, sockAddr) <- N.accept sock
+[;1m[34m    |[0m[0m[;1m[35m              ^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:251:29: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m251 |[0m[0m                 handler _ = [;1m[35mN.sClose[0m[0m sock
+[;1m[34m    |[0m[0m[;1m[35m                             ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP/Internal.hs:284:3: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m284 |[0m[0m   [;1m[35mN.sClose[0m[0m sock
+[;1m[34m    |[0m[0m[;1m[35m   ^^^^^^^^[0m[0m
+[0m[0m[0m[2 of 2] Compiling Network.Transport.TCP ( src/Network/Transport/TCP.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Network/Transport/TCP.o )
+
+[;1msrc/Network/Transport/TCP.hs:68:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘tryToEnum’
+    from module ‘Network.Transport.Internal’ is redundant[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m68 |[0m[0m [;1m[35mimport Network.Transport.Internal[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:170:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The qualified import of ‘Data.ByteString’ is redundant
+      except perhaps to import instances from ‘Data.ByteString’
+    To import instances alone, use: import Data.ByteString()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m170 |[0m[0m [;1m[35mimport qualified Data.ByteString as BS (length)[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:960:32: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘sock’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:916:49[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m960 |[0m[0m     handleConnectionRequestV0 ([;1m[35msock[0m[0m, sockAddr) = do
+[;1m[34m    |[0m[0m[;1m[35m                                ^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:960:38: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘sockAddr’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:916:55[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m960 |[0m[0m     handleConnectionRequestV0 (sock, [;1m[35msockAddr[0m[0m) = do
+[;1m[34m    |[0m[0m[;1m[35m                                      ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:962:20: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘actualPort’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m962 |[0m[0m       (actualHost, [;1m[35mactualPort[0m[0m) <-
+[;1m[34m    |[0m[0m[;1m[35m                    ^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1229:17: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘sock’[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1229 |[0m[0m     closeSocket [;1m[35msock[0m[0m lastReceivedId = do
+[;1m[34m     |[0m[0m[;1m[35m                 ^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1272:17: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘act’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:1103:5[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1272 |[0m[0m                 [;1m[35mact[0m[0m <- schedule theirEndPoint $ do
+[;1m[34m     |[0m[0m[;1m[35m                 ^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1303:17: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘act’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:1103:5[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1303 |[0m[0m                 [;1m[35mact[0m[0m <- schedule theirEndPoint $ return ()
+[;1m[34m     |[0m[0m[;1m[35m                 ^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1313:14: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘act’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:1103:5[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1313 |[0m[0m         Just [;1m[35mact[0m[0m -> do
+[;1m[34m     |[0m[0m[;1m[35m              ^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1376:21: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘err’ shadows the existing binding
+      bound at src/Network/Transport/TCP.hs:1343:19[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1376 |[0m[0m                     [;1m[35merr[0m[0m  = TransportError code (show err')
+[;1m[34m     |[0m[0m[;1m[35m                     ^^^[0m[0m
+[0m[0m[0m
+[;1msrc/Network/Transport/TCP.hs:1887:21: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘ourEndPoint’[0m[0m
+[;1m[34m     |[0m[0m
+[;1m[34m1887 |[0m[0m runScheduledAction ([;1m[35mourEndPoint[0m[0m, theirEndPoint) mvar = do
+[;1m[34m     |[0m[0m[;1m[35m                     ^^^^^^^^^^^[0m[0m
+[0m[0m[0mInstalling library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/nightly-2017-10-13/8.2.1/lib/x86_64-osx-ghc-8.2.1/network-transport-tcp-0.6.0-651P4Wgs2533uWPzRkD2RI
+Registering library for network-transport-tcp-0.6.0..

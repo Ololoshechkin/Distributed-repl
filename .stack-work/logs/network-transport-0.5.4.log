@@ -1,0 +1,8 @@
+Configuring network-transport-0.5.4...
+Preprocessing library for network-transport-0.5.4..
+Building library for network-transport-0.5.4..
+[1 of 3] Compiling Network.Transport ( src/Network/Transport.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Network/Transport.o )
+[2 of 3] Compiling Network.Transport.Internal ( src/Network/Transport/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Network/Transport/Internal.o )
+[3 of 3] Compiling Network.Transport.Util ( src/Network/Transport/Util.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Network/Transport/Util.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-14.1/8.6.5/lib/x86_64-osx-ghc-8.6.5/network-transport-0.5.4-1YKuMhCY2KsChZr3zaYdsT
+Registering library for network-transport-0.5.4..

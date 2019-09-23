@@ -1,0 +1,36 @@
+Configuring clay-0.12.2...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for clay-0.12.2..
+Building library for clay-0.12.2..
+[ 1 of 30] Compiling Clay.Property    ( src/Clay/Property.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Property.o )
+[ 2 of 30] Compiling Clay.Common      ( src/Clay/Common.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Common.o )
+[ 3 of 30] Compiling Clay.Color       ( src/Clay/Color.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Color.o )
+[ 4 of 30] Compiling Clay.Selector    ( src/Clay/Selector.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Selector.o )
+[ 5 of 30] Compiling Clay.Pseudo      ( src/Clay/Pseudo.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Pseudo.o )
+[ 6 of 30] Compiling Clay.Elements    ( src/Clay/Elements.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Elements.o )
+[ 7 of 30] Compiling Clay.Attributes  ( src/Clay/Attributes.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Attributes.o )
+[ 8 of 30] Compiling Clay.Stylesheet  ( src/Clay/Stylesheet.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Stylesheet.o )
+[ 9 of 30] Compiling Clay.Size        ( src/Clay/Size.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Size.o )
+[10 of 30] Compiling Clay.Render      ( src/Clay/Render.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Render.o )
+[11 of 30] Compiling Clay.Media       ( src/Clay/Media.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Media.o )
+[12 of 30] Compiling Clay.List        ( src/Clay/List.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/List.o )
+[13 of 30] Compiling Clay.Geometry    ( src/Clay/Geometry.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Geometry.o )
+[14 of 30] Compiling Clay.FontFace    ( src/Clay/FontFace.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/FontFace.o )
+[15 of 30] Compiling Clay.Font        ( src/Clay/Font.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Font.o )
+[16 of 30] Compiling Clay.Flexbox     ( src/Clay/Flexbox.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Flexbox.o )
+[17 of 30] Compiling Clay.Filter      ( src/Clay/Filter.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Filter.o )
+[18 of 30] Compiling Clay.Dynamic     ( src/Clay/Dynamic.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Dynamic.o )
+[19 of 30] Compiling Clay.Display     ( src/Clay/Display.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Display.o )
+[20 of 30] Compiling Clay.Border      ( src/Clay/Border.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Border.o )
+[21 of 30] Compiling Clay.Box         ( src/Clay/Box.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Box.o )
+[22 of 30] Compiling Clay.Background  ( src/Clay/Background.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Background.o )
+[23 of 30] Compiling Clay.Mask        ( src/Clay/Mask.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Mask.o )
+[24 of 30] Compiling Clay.Gradient    ( src/Clay/Gradient.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Gradient.o )
+[25 of 30] Compiling Clay.Text        ( src/Clay/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Text.o )
+[26 of 30] Compiling Clay.Time        ( src/Clay/Time.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Time.o )
+[27 of 30] Compiling Clay.Transform   ( src/Clay/Transform.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Transform.o )
+[28 of 30] Compiling Clay.Transition  ( src/Clay/Transition.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Transition.o )
+[29 of 30] Compiling Clay.Animation   ( src/Clay/Animation.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay/Animation.o )
+[30 of 30] Compiling Clay             ( src/Clay.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Clay.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/clay-0.12.2-5Y9PmoctwuYJzeeKjOClpX
+Registering library for clay-0.12.2..

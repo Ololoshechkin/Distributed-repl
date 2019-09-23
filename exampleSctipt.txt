@@ -1,0 +1,18 @@
+var             i = 0
+var s = "a"
+var inc  = function(x) {
+	var y = (x) + (1)
+	return y
+}
+var isOdd = function(x) {
+	var y = ((x)  / (2)) * (2)
+	var res = if ((x) == (y)) then (true) else (false)
+	return res
+}
+while ((i) < (5)) {
+         var i = inc(i)
+         var s = if (isOdd(i)) then ((s) ## ("c")) else ((s) ## ("y"))
+}
+PUBLISH (s) ("aaa") 1
+LOAD (s) q
+return q  

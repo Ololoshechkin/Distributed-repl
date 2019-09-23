@@ -1,0 +1,12 @@
+Configuring parseargs-0.2.0.9...
+Preprocessing executable 'parseargs-example' for parseargs-0.2.0.9..
+Building executable 'parseargs-example' for parseargs-0.2.0.9..
+[1 of 2] Compiling System.Console.ParseArgs ( System/Console/ParseArgs.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/parseargs-example/parseargs-example-tmp/System/Console/ParseArgs.o )
+[2 of 2] Compiling Main             ( parseargs-example.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/parseargs-example/parseargs-example-tmp/Main.o )
+Linking .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/parseargs-example/parseargs-example ...
+Preprocessing library for parseargs-0.2.0.9..
+Building library for parseargs-0.2.0.9..
+[1 of 1] Compiling System.Console.ParseArgs ( System/Console/ParseArgs.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/System/Console/ParseArgs.o )
+Installing executable parseargs-example in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/bin
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/parseargs-0.2.0.9-BRJgqOUM0JT9iteT6k8fPr
+Registering library for parseargs-0.2.0.9..

@@ -1,0 +1,220 @@
+[1 of 2] Compiling Main             ( /private/var/folders/lm/pw3z3cgx6zn2y748hl3hvgw40000gn/T/stack59933/gtk-0.15.2/Setup.hs, /private/var/folders/lm/pw3z3cgx6zn2y748hl3hvgw40000gn/T/stack59933/gtk-0.15.2/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/setup/Main.o )
+[2 of 2] Compiling StackSetupShim   ( /Users/Vadim/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /private/var/folders/lm/pw3z3cgx6zn2y748hl3hvgw40000gn/T/stack59933/gtk-0.15.2/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/setup/StackSetupShim.o )
+Linking /private/var/folders/lm/pw3z3cgx6zn2y748hl3hvgw40000gn/T/stack59933/gtk-0.15.2/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/setup/setup ...
+Configuring gtk-0.15.2...
+Preprocessing library for gtk-0.15.2..
+Building library for gtk-0.15.2..
+[  1 of 209] Compiling Graphics.UI.Gtk.Gdk.Enums ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Enums.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Enums.o )
+[  2 of 209] Compiling Graphics.UI.Gtk.Gdk.Keys ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Keys.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Keys.o )
+[  3 of 209] Compiling Graphics.UI.Gtk.General.Enums ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Enums.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Enums.o )
+[  4 of 209] Compiling Graphics.UI.Gtk.General.Threading ( Graphics/UI/Gtk/General/Threading.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Threading.o )
+[  5 of 209] Compiling Graphics.UI.Gtk.ModelView.Sequence ( Graphics/UI/Gtk/ModelView/Sequence.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/Sequence.o )
+[  6 of 209] Compiling Graphics.UI.Gtk.Printing.PaperSize ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PaperSize.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PaperSize.o )
+[  7 of 209] Compiling Graphics.UI.Gtk.Signals ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Signals.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Signals.o )
+[  8 of 209] Compiling Graphics.UI.Gtk.Types ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Types.o )
+[  9 of 209] Compiling Graphics.UI.Gtk.Special.Ruler ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/Ruler.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/Ruler.o )
+[ 10 of 209] Compiling Graphics.UI.Gtk.Recent.RecentInfo ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentInfo.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentInfo.o )
+[ 11 of 209] Compiling Graphics.UI.Gtk.Recent.RecentManager ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentManager.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentManager.o )
+[ 12 of 209] Compiling Graphics.UI.Gtk.Printing.PrintSettings ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintSettings.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintSettings.o )
+[ 13 of 209] Compiling Graphics.UI.Gtk.Printing.PrintOperation ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintOperation.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintOperation.o )
+[ 14 of 209] Compiling Graphics.UI.Gtk.Printing.PrintContext ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintContext.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PrintContext.o )
+[ 15 of 209] Compiling Graphics.UI.Gtk.Printing.PageSetup ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PageSetup.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Printing/PageSetup.o )
+[ 16 of 209] Compiling Graphics.UI.Gtk.Multiline.TextTagTable ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextTagTable.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextTagTable.o )
+[ 17 of 209] Compiling Graphics.UI.Gtk.Multiline.TextMark ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextMark.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextMark.o )
+[ 18 of 209] Compiling Graphics.UI.Gtk.ModelView.Types ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/Types.o )
+[ 19 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeRowReference ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeRowReference.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeRowReference.o )
+[ 20 of 209] Compiling Graphics.UI.Gtk.Misc.SizeGroup ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/SizeGroup.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/SizeGroup.o )
+[ 21 of 209] Compiling Graphics.UI.Gtk.Misc.IMMulticontext ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/IMMulticontext.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/IMMulticontext.o )
+[ 22 of 209] Compiling Graphics.UI.Gtk.Misc.IMContextSimple ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/IMContextSimple.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/IMContextSimple.o )
+[ 23 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.MenuShell ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuShell.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuShell.o )
+[ 24 of 209] Compiling Graphics.UI.Gtk.General.Settings ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Settings.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Settings.o )
+[ 25 of 209] Compiling Graphics.UI.Gtk.General.RcStyle ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/RcStyle.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/RcStyle.o )
+[ 26 of 209] Compiling Graphics.UI.Gtk.General.DNDTypes ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/DNDTypes.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/DNDTypes.o )
+[ 27 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeDrag ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeDrag.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeDrag.o )
+[ 28 of 209] Compiling Graphics.UI.Gtk.ModelView.CustomStore ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CustomStore.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CustomStore.o )
+[ 29 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeModel ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModel.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModel.o )
+[ 30 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeStore ( Graphics/UI/Gtk/ModelView/TreeStore.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeStore.o )
+[ 31 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeModelSort ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModelSort.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModelSort.o )
+[ 32 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeModelFilter ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModelFilter.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeModelFilter.o )
+[ 33 of 209] Compiling Graphics.UI.Gtk.ModelView.ListStore ( Graphics/UI/Gtk/ModelView/ListStore.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/ListStore.o )
+[ 34 of 209] Compiling Graphics.UI.Gtk.ModelView.CellLayout ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellLayout.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellLayout.o )
+[ 35 of 209] Compiling Graphics.UI.Gtk.Gdk.Pixmap ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Pixmap.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Pixmap.o )
+[ 36 of 209] Compiling Graphics.UI.Gtk.Gdk.PixbufData ( Graphics/UI/Gtk/Gdk/PixbufData.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/PixbufData.o )
+[ 37 of 209] Compiling Graphics.UI.Gtk.Gdk.PixbufAnimation ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/PixbufAnimation.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/PixbufAnimation.o )
+[ 38 of 209] Compiling Graphics.UI.Gtk.Gdk.DisplayManager ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/DisplayManager.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/DisplayManager.o )
+[ 39 of 209] Compiling Graphics.UI.Gtk.Entry.EntryBuffer ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/EntryBuffer.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/EntryBuffer.o )
+[ 40 of 209] Compiling Graphics.UI.Gtk.Entry.Editable ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/Editable.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/Editable.o )
+[ 41 of 209] Compiling Graphics.UI.Gtk.Embedding.Types ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Types.o )
+[ 42 of 209] Compiling Graphics.UI.Gtk.Embedding.Embedding ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Embedding.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Embedding.o )
+[ 43 of 209] Compiling Graphics.UI.Gtk.Builder ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Builder.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Builder.o )
+[ 44 of 209] Compiling Graphics.UI.Gtk.ActionMenuToolbar.RecentAction ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/RecentAction.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/RecentAction.o )
+[ 45 of 209] Compiling Graphics.UI.Gtk.Abstract.Separator ( Graphics/UI/Gtk/Abstract/Separator.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Separator.o )
+[ 46 of 209] Compiling Graphics.UI.Gtk.Abstract.Scrollbar ( Graphics/UI/Gtk/Abstract/Scrollbar.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Scrollbar.o )
+[ 47 of 209] Compiling Graphics.UI.Gtk.Abstract.Scale ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Scale.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Scale.o )
+[ 48 of 209] Compiling Graphics.UI.Gtk.Abstract.Object ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Object.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Abstract/Object.o )
+[ 49 of 209] Compiling Graphics.UI.Gtk.Special.VRuler ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/VRuler.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/VRuler.o )
+[ 50 of 209] Compiling Graphics.UI.Gtk.Special.HRuler ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/HRuler.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Special/HRuler.o )
+[ 51 of 209] Compiling Graphics.UI.Gtk.Selectors.HSV ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/HSV.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/HSV.o )
+[ 52 of 209] Compiling Graphics.UI.Gtk.Selectors.FontSelectionDialog ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontSelectionDialog.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontSelectionDialog.o )
+[ 53 of 209] Compiling Graphics.UI.Gtk.Selectors.FontSelection ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontSelection.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontSelection.o )
+[ 54 of 209] Compiling Graphics.UI.Gtk.Selectors.FontButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FontButton.o )
+[ 55 of 209] Compiling Graphics.UI.Gtk.Selectors.FileFilter ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileFilter.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileFilter.o )
+[ 56 of 209] Compiling Graphics.UI.Gtk.Selectors.FileChooser ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooser.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooser.o )
+[ 57 of 209] Compiling Graphics.UI.Gtk.Selectors.FileChooserWidget ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooserWidget.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooserWidget.o )
+[ 58 of 209] Compiling Graphics.UI.Gtk.Selectors.FileChooserButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooserButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileChooserButton.o )
+[ 59 of 209] Compiling Graphics.UI.Gtk.Scrolling.VScrollbar ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/VScrollbar.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/VScrollbar.o )
+[ 60 of 209] Compiling Graphics.UI.Gtk.Scrolling.ScrolledWindow ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/ScrolledWindow.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/ScrolledWindow.o )
+[ 61 of 209] Compiling Graphics.UI.Gtk.Scrolling.HScrollbar ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/HScrollbar.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Scrolling/HScrollbar.o )
+[ 62 of 209] Compiling Graphics.UI.Gtk.Recent.RecentFilter ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentFilter.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentFilter.o )
+[ 63 of 209] Compiling Graphics.UI.Gtk.Recent.RecentChooserWidget ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooserWidget.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooserWidget.o )
+[ 64 of 209] Compiling Graphics.UI.Gtk.Recent.RecentChooserMenu ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooserMenu.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooserMenu.o )
+[ 65 of 209] Compiling Graphics.UI.Gtk.Recent.RecentChooser ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooser.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Recent/RecentChooser.o )
+[ 66 of 209] Compiling Graphics.UI.Gtk.Ornaments.VSeparator ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/VSeparator.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/VSeparator.o )
+[ 67 of 209] Compiling Graphics.UI.Gtk.Ornaments.HSeparator ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/HSeparator.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/HSeparator.o )
+[ 68 of 209] Compiling Graphics.UI.Gtk.Ornaments.Frame ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/Frame.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Ornaments/Frame.o )
+[ 69 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeSelection ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeSelection.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeSelection.o )
+[ 70 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererToggle ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererToggle.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererToggle.o )
+[ 71 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererSpin ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererSpin.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererSpin.o )
+[ 72 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererProgress ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererProgress.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererProgress.o )
+[ 73 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererPixbuf ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererPixbuf.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererPixbuf.o )
+[ 74 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererCombo ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererCombo.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererCombo.o )
+[ 75 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererAccel ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererAccel.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererAccel.o )
+[ 76 of 209] Compiling Graphics.UI.Gtk.Misc.Viewport ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Viewport.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Viewport.o )
+[ 77 of 209] Compiling Graphics.UI.Gtk.Misc.Tooltips ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Tooltips.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Tooltips.o )
+[ 78 of 209] Compiling Graphics.UI.Gtk.Misc.HandleBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/HandleBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/HandleBox.o )
+[ 79 of 209] Compiling Graphics.UI.Gtk.Misc.EventBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/EventBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/EventBox.o )
+[ 80 of 209] Compiling Graphics.UI.Gtk.Misc.Calendar ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Calendar.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Calendar.o )
+[ 81 of 209] Compiling Graphics.UI.Gtk.Misc.Arrow ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Arrow.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Arrow.o )
+[ 82 of 209] Compiling Graphics.UI.Gtk.Misc.Adjustment ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Adjustment.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Adjustment.o )
+[ 83 of 209] Compiling Graphics.UI.Gtk.Misc.Accessible ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Accessible.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Accessible.o )
+[ 84 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ToolItemGroup ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolItemGroup.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolItemGroup.o )
+[ 85 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.TearoffMenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/TearoffMenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/TearoffMenuItem.o )
+[ 86 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.SeparatorToolItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/SeparatorToolItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/SeparatorToolItem.o )
+[ 87 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.SeparatorMenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/SeparatorMenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/SeparatorMenuItem.o )
+[ 88 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.RadioMenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/RadioMenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/RadioMenuItem.o )
+[ 89 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.OptionMenu ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/OptionMenu.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/OptionMenu.o )
+[ 90 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.MenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuItem.o )
+[ 91 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.MenuBar ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuBar.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuBar.o )
+[ 92 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.CheckMenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/CheckMenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/CheckMenuItem.o )
+[ 93 of 209] Compiling Graphics.UI.Gtk.Layout.VPaned ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VPaned.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VPaned.o )
+[ 94 of 209] Compiling Graphics.UI.Gtk.Layout.VButtonBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VButtonBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VButtonBox.o )
+[ 95 of 209] Compiling Graphics.UI.Gtk.Layout.VBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/VBox.o )
+[ 96 of 209] Compiling Graphics.UI.Gtk.Layout.HPaned ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HPaned.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HPaned.o )
+[ 97 of 209] Compiling Graphics.UI.Gtk.Layout.HButtonBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HButtonBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HButtonBox.o )
+[ 98 of 209] Compiling Graphics.UI.Gtk.Layout.HBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/HBox.o )
+[ 99 of 209] Compiling Graphics.UI.Gtk.Layout.Expander ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/Expander.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/Expander.o )
+[100 of 209] Compiling Graphics.UI.Gtk.Layout.AspectFrame ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/AspectFrame.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/AspectFrame.o )
+[101 of 209] Compiling Graphics.UI.Gtk.Layout.Alignment ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/Alignment.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Layout/Alignment.o )
+[102 of 209] Compiling Graphics.UI.Gtk.General.Structs ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Structs.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Structs.o )
+[103 of 209] Compiling Graphics.UI.Gtk.Selectors.FileSelection ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileSelection.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/FileSelection.o )
+[104 of 209] Compiling Graphics.UI.Gtk.Selectors.ColorSelectionDialog ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorSelectionDialog.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorSelectionDialog.o )
+[105 of 209] Compiling Graphics.UI.Gtk.Selectors.ColorSelection ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorSelection.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorSelection.o )
+[106 of 209] Compiling Graphics.UI.Gtk.Selectors.ColorButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Selectors/ColorButton.o )
+[107 of 209] Compiling Graphics.UI.Gtk.Multiline.Types ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/Types.o )
+[108 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeViewColumn ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeViewColumn.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeViewColumn.o )
+[109 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeSortable ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeSortable.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeSortable.o )
+[110 of 209] Compiling Graphics.UI.Gtk.ModelView.CellView ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellView.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellView.o )
+[111 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererText ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererText.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererText.o )
+[112 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ComboBox ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ComboBox.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ComboBox.o )
+[113 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ComboBoxEntry ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ComboBoxEntry.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ComboBoxEntry.o )
+[114 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRendererSpinner ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererSpinner.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRendererSpinner.o )
+[115 of 209] Compiling Graphics.UI.Gtk.Misc.Tooltip ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Tooltip.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/Tooltip.o )
+[116 of 209] Compiling Graphics.UI.Gtk.Misc.DrawingArea ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/DrawingArea.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Misc/DrawingArea.o )
+[117 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ToolPalette ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolPalette.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolPalette.o )
+[118 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ToolItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolItem.o )
+[119 of 209] Compiling Graphics.UI.Gtk.General.Style ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Style.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Style.o )
+[120 of 209] Compiling Graphics.UI.Gtk.General.IconTheme ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/IconTheme.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/IconTheme.o )
+[121 of 209] Compiling Graphics.UI.Gtk.Gdk.Screen ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Screen.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Screen.o )
+[122 of 209] Compiling Graphics.UI.Gtk.Gdk.Region ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Region.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Region.o )
+[123 of 209] Compiling Graphics.UI.Gtk.Gdk.Pixbuf ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Pixbuf.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Pixbuf.o )
+[124 of 209] Compiling Graphics.UI.Gtk.Gdk.Keymap ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Keymap.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Keymap.o )
+[125 of 209] Compiling Graphics.UI.Gtk.Gdk.GC ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/GC.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/GC.o )
+[126 of 209] Compiling Graphics.UI.Gtk.ModelView.CellRenderer ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRenderer.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellRenderer.o )
+[127 of 209] Compiling Graphics.UI.Gtk.Gdk.Events ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Events.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Events.o )
+[128 of 209] Compiling Graphics.UI.Gtk.ModelView.TreeView ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeView.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/TreeView.o )
+[129 of 209] Compiling Graphics.UI.Gtk.ModelView.IconView ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/IconView.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/IconView.o )
+[130 of 209] Compiling Graphics.UI.Gtk.General.StockItems ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/StockItems.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/StockItems.o )
+[131 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ToolButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToolButton.o )
+[132 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ToggleToolButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToggleToolButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ToggleToolButton.o )
+[133 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.RadioToolButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/RadioToolButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/RadioToolButton.o )
+[134 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.MenuToolButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuToolButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/MenuToolButton.o )
+[135 of 209] Compiling Graphics.UI.Gtk.MenuComboToolbar.ImageMenuItem ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ImageMenuItem.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/MenuComboToolbar/ImageMenuItem.o )
+[136 of 209] Compiling Graphics.UI.Gtk.General.IconFactory ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/IconFactory.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/IconFactory.o )
+[137 of 209] Compiling Graphics.UI.Gtk.ActionMenuToolbar.ToggleAction ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/ToggleAction.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/ToggleAction.o )
+[138 of 209] Compiling Graphics.UI.Gtk.ActionMenuToolbar.RadioAction ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/RadioAction.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ActionMenuToolbar/RadioAction.o )
+[139 of 209] Compiling Graphics.UI.Gtk.General.Selection ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Selection.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Selection.o )
+[140 of 209] Compiling Graphics.UI.Gtk.General.Clipboard ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Clipboard.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Clipboard.o )
+[141 of 209] Compiling Graphics.UI.Gtk.General.Drag ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Drag.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/Drag.o )
+[142 of 209] Compiling Graphics.UI.Gtk.Gdk.EventM ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/EventM.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/EventM.o )
+
+[;1mGraphics/UI/Gtk/Gdk/EventM.hsc:390:15: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverflowed-literals[0m[0m[;1m][0m[0m[;1m
+    Literal -1 is out of the Word32 range 0..4294967295[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m390 |[0m[0m allModMask = -[;1m[35m1[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m               ^[0m[0m
+[0m[0m[0m[143 of 209] Compiling Graphics.UI.Gtk.Multiline.TextTag ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextTag.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextTag.o )
+[144 of 209] Compiling Graphics.UI.Gtk.Multiline.TextView ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextView.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextView.o )
+[145 of 209] Compiling Graphics.UI.Gtk.Multiline.TextIter ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextIter.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextIter.o )
+[146 of 209] Compiling Graphics.UI.Gtk.Multiline.TextBuffer ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextBuffer.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Multiline/TextBuffer.o )
+[147 of 209] Compiling Graphics.UI.Gtk.ModelView.CellEditable ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellEditable.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView/CellEditable.o )
+[148 of 209] Compiling Graphics.UI.Gtk.Gdk.Display ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Display.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Display.o )
+[149 of 209] Compiling Graphics.UI.Gtk.Gdk.AppLaunchContext ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/AppLaunchContext.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/AppLaunchContext.o )
+[150 of 209] Compiling Graphics.UI.Gtk.Gdk.Drawable ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Drawable.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Drawable.o )
+[151 of 209] Compiling Graphics.UI.Gtk.Gdk.Cursor ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Cursor.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Cursor.o )
+[152 of 209] Compiling Graphics.UI.Gtk.Gdk.Gdk ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Gdk.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/Gdk.o )
+[153 of 209] Compiling Graphics.UI.Gtk.Gdk.DrawWindow ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/DrawWindow.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Gdk/DrawWindow.o )
+[154 of 209] Compiling Graphics.UI.Gtk.Cairo ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Cairo.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Cairo.o )
+[155 of 209] Compiling Graphics.UI.Gtk.General.General ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/General.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/General/General.o )
+[156 of 209] Compiling Graphics.UI.Gtk.Entry.VScale ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/VScale.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/VScale.o )
+[157 of 209] Compiling Graphics.UI.Gtk.Entry.SpinButton ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/SpinButton.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/SpinButton.o )
+[158 of 209] Compiling Graphics.UI.Gtk.Entry.HScale ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/HScale.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/HScale.o )
+[159 of 209] Compiling Graphics.UI.Gtk.Entry.EntryCompletion ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/EntryCompletion.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/EntryCompletion.o )
+[160 of 209] Compiling Graphics.UI.Gtk.ModelView ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/ModelView.o )
+[161 of 209] Compiling Graphics.UI.Gtk.Entry.Entry ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/Entry.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Entry/Entry.o )
+[162 of 209] Compiling Graphics.UI.Gtk.Embedding.Socket ( .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Socket.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Graphics/UI/Gtk/Embedding/Socket.o )
+
+[;1mGraphics/UI/Gtk/Embedding/Socket.chs:175:6: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Couldn't match expected type ‘Ptr ()’
+                  with actual type ‘Maybe DrawWindow’
+    • In the second argument of ‘\ (Socket arg1) arg2
+                                   -> withForeignPtr arg1
+                                        $ \ argPtr1 -> gtk_socket_add_id argPtr1 arg2’, namely
+        ‘(fromNativeWindowId windowId)’
+      In the expression:
+        (\ (Socket arg1) arg2
+           -> withForeignPtr arg1
+                $ \ argPtr1 -> gtk_socket_add_id argPtr1 arg2)
+          (toSocket self) (fromNativeWindowId windowId)
+      In an equation for ‘socketAddId’:
+          socketAddId self windowId
+            = (\ (Socket arg1) arg2
+                 -> withForeignPtr arg1
+                      $ \ argPtr1 -> gtk_socket_add_id argPtr1 arg2)
+                (toSocket self) (fromNativeWindowId windowId)[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m175 |[0m[0m     ([;1m[31mfromNativeWindowId windowId[0m[0m)
+[;1m[34m    |[0m[0m[;1m[31m      ^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mGraphics/UI/Gtk/Embedding/Socket.chs:187:3: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Couldn't match type ‘Ptr ()’ with ‘Maybe DrawWindow’
+      Expected type: IO (Maybe DrawWindow)
+        Actual type: IO (Ptr ())
+    • In the second argument of ‘($)’, namely
+        ‘(\ (Socket arg1)
+            -> withForeignPtr arg1 $ \ argPtr1 -> gtk_socket_get_id argPtr1)
+           (toSocket self)’
+      In the expression:
+        liftM toNativeWindowId
+          $ (\ (Socket arg1)
+               -> withForeignPtr arg1 $ \ argPtr1 -> gtk_socket_get_id argPtr1)
+              (toSocket self)
+      In an equation for ‘socketGetId’:
+          socketGetId self
+            = liftM toNativeWindowId
+                $ (\ (Socket arg1)
+                     -> withForeignPtr arg1 $ \ argPtr1 -> gtk_socket_get_id argPtr1)
+                    (toSocket self)[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m187 |[0m[0m   [;1m[31m{# call unsafe socket_get_id #}[0m[0m
+[;1m[34m    |[0m[0m[;1m[31m   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m

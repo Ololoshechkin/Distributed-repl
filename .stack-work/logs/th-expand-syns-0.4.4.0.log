@@ -1,0 +1,8 @@
+Configuring th-expand-syns-0.4.4.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for th-expand-syns-0.4.4.0..
+Building library for th-expand-syns-0.4.4.0..
+[1 of 2] Compiling Language.Haskell.TH.ExpandSyns.SemigroupCompat ( Language/Haskell/TH/ExpandSyns/SemigroupCompat.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Haskell/TH/ExpandSyns/SemigroupCompat.o )
+[2 of 2] Compiling Language.Haskell.TH.ExpandSyns ( Language/Haskell/TH/ExpandSyns.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Haskell/TH/ExpandSyns.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/th-expand-syns-0.4.4.0-3kFGYL0IHLbFlT4ybVKmjP
+Registering library for th-expand-syns-0.4.4.0..

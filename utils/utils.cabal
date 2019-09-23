@@ -1,0 +1,47 @@
+name:                utils
+version:             0.1.0.0
+synopsis:            Synopsis for utils
+description:         utils is a utils
+
+homepage:            https://github.com//haskell_project/tree/master/utils#readme
+license:             MIT
+license-file:        LICENSE
+author:              Vadim Briliantov
+maintainer:          v.brilyantov@gmail.com
+copyright:           2019 Vadim Briliantov
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.6.5
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Messages, NetworkUtils
+  ghc-options:         -Wall
+  build-depends:
+      base  >= 4.8 && < 5
+      , containers
+      , mtl
+      , megaparsec
+      , utf8-string
+      , bytestring
+      , directory
+      , exceptions
+      , network
+      , network-transport
+      , network-transport-tcp
+      , binary
+      , lens
+      , stm
+  default-language:    Haskell2010
+
+test-suite utils-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , utils
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010

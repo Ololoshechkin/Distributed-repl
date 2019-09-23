@@ -1,0 +1,11 @@
+Configuring webviewhs-0.1.0.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for webviewhs-0.1.0.0..
+Building library for webviewhs-0.1.0.0..
+[1 of 1] Compiling Graphics.UI.Webviewhs ( src/Graphics/UI/Webviewhs.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Graphics/UI/Webviewhs.o )
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Installing library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/webviewhs-0.1.0.0-Cey2FQgCnEHGWxfuNCCwdD
+Registering library for webviewhs-0.1.0.0..

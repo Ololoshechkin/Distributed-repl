@@ -1,0 +1,15 @@
+Configuring parseargs-0.2.0.8...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing executable 'parseargs-example' for parseargs-0.2.0.8..
+Building executable 'parseargs-example' for parseargs-0.2.0.8..
+[1 of 2] Compiling System.Console.ParseArgs ( System/Console/ParseArgs.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/parseargs-example/parseargs-example-tmp/System/Console/ParseArgs.o )
+[2 of 2] Compiling Main             ( parseargs-example.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/parseargs-example/parseargs-example-tmp/Main.o )
+Linking .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/parseargs-example/parseargs-example ...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for parseargs-0.2.0.8..
+Building library for parseargs-0.2.0.8..
+[1 of 1] Compiling System.Console.ParseArgs ( System/Console/ParseArgs.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/System/Console/ParseArgs.o )
+Installing executable parseargs-example in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/bin
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/parseargs-0.2.0.8-28MfuyO7B5aF1IXr5es5h9
+Registering library for parseargs-0.2.0.8..

@@ -1,0 +1,8 @@
+Configuring parser-combinators-0.2.0...
+Preprocessing library for parser-combinators-0.2.0..
+Building library for parser-combinators-0.2.0..
+[1 of 3] Compiling Control.Applicative.Combinators ( Control/Applicative/Combinators.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Control/Applicative/Combinators.o )
+[2 of 3] Compiling Control.Applicative.Combinators.NonEmpty ( Control/Applicative/Combinators/NonEmpty.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Control/Applicative/Combinators/NonEmpty.o )
+[3 of 3] Compiling Control.Applicative.Permutations ( Control/Applicative/Permutations.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Control/Applicative/Permutations.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/nightly-2017-10-13/8.2.1/lib/x86_64-osx-ghc-8.2.1/parser-combinators-0.2.0-L9J19w0av9XEFjxGFG8NLB
+Registering library for parser-combinators-0.2.0..

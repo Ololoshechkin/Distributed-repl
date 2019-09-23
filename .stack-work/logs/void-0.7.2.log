@@ -1,0 +1,7 @@
+Configuring void-0.7.2...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for void-0.7.2..
+Building library for void-0.7.2..
+[1 of 1] Compiling Data.Void.Unsafe ( src/Data/Void/Unsafe.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Void/Unsafe.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/void-0.7.2-JAsenjnj1DBHDal2sW0JoW
+Registering library for void-0.7.2..

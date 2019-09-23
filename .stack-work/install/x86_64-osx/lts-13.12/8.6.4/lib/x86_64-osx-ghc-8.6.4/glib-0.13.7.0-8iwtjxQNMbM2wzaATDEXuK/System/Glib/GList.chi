@@ -1,0 +1,2 @@
+C->Haskell Interface Version C->Haskell Compiler, version 0.13.13 (gtk2hs branch) "Bin IO", 27 May 2012
+([((True,"GSList"),(False,Ptr,Nothing,"()")),((True,"GList"),(False,Ptr,Nothing,"()"))],[("GSList",Pointer {ptrTypeHO = Ptr, isNewtypeHO = False}),("GList",Pointer {ptrTypeHO = Ptr, isNewtypeHO = False})])

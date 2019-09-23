@@ -1,0 +1,9 @@
+Configuring haskell-src-meta-0.8.2...
+Preprocessing library for haskell-src-meta-0.8.2..
+Building library for haskell-src-meta-0.8.2..
+[1 of 4] Compiling Language.Haskell.Meta.Syntax.Translate ( src/Language/Haskell/Meta/Syntax/Translate.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Language/Haskell/Meta/Syntax/Translate.o )
+[2 of 4] Compiling Language.Haskell.Meta.Parse ( src/Language/Haskell/Meta/Parse.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Language/Haskell/Meta/Parse.o )
+[3 of 4] Compiling Language.Haskell.Meta ( src/Language/Haskell/Meta.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Language/Haskell/Meta.o )
+[4 of 4] Compiling Language.Haskell.Meta.Utils ( src/Language/Haskell/Meta/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Language/Haskell/Meta/Utils.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/haskell-src-meta-0.8.2-In4Rsken0ok1gUydsPFx17
+Registering library for haskell-src-meta-0.8.2..

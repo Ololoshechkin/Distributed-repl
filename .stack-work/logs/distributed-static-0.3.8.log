@@ -1,0 +1,7 @@
+Configuring distributed-static-0.3.8...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for distributed-static-0.3.8..
+Building library for distributed-static-0.3.8..
+[1 of 1] Compiling Control.Distributed.Static ( src/Control/Distributed/Static.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Distributed/Static.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/distributed-static-0.3.8-IroIyvx1eE59PkHKs4a9np
+Registering library for distributed-static-0.3.8..

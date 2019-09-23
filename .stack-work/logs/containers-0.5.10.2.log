@@ -1,0 +1,10 @@
+Configuring containers-0.5.10.2...
+Preprocessing library for containers-0.5.10.2..
+Building library for containers-0.5.10.2..
+[ 1 of 33] Compiling Utils.Containers.Internal.BitUtil ( Utils/Containers/Internal/BitUtil.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/BitUtil.o )
+[ 2 of 33] Compiling Utils.Containers.Internal.BitQueue ( Utils/Containers/Internal/BitQueue.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/BitQueue.o )
+[ 3 of 33] Compiling Utils.Containers.Internal.PtrEquality ( Utils/Containers/Internal/PtrEquality.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/PtrEquality.o )
+[ 4 of 33] Compiling Utils.Containers.Internal.StrictFold ( Utils/Containers/Internal/StrictFold.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/StrictFold.o )
+[ 5 of 33] Compiling Utils.Containers.Internal.StrictMaybe ( Utils/Containers/Internal/StrictMaybe.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/StrictMaybe.o )
+[ 6 of 33] Compiling Utils.Containers.Internal.StrictPair ( Utils/Containers/Internal/StrictPair.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Utils/Containers/Internal/StrictPair.o )
+[ 7 of 33] Compiling Data.Set.Internal ( Data/Set/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Set/Internal.o )

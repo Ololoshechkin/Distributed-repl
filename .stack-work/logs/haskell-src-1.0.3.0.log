@@ -1,0 +1,13 @@
+Configuring haskell-src-1.0.3.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for haskell-src-1.0.3.0..
+shift/reduce conflicts:  2
+Building library for haskell-src-1.0.3.0..
+[1 of 6] Compiling Language.Haskell.Syntax ( Language/Haskell/Syntax.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/Syntax.o )
+[2 of 6] Compiling Language.Haskell.Pretty ( Language/Haskell/Pretty.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/Pretty.o )
+[3 of 6] Compiling Language.Haskell.ParseMonad ( Language/Haskell/ParseMonad.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/ParseMonad.o )
+[4 of 6] Compiling Language.Haskell.ParseUtils ( Language/Haskell/ParseUtils.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/ParseUtils.o )
+[5 of 6] Compiling Language.Haskell.Lexer ( Language/Haskell/Lexer.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/Lexer.o )
+[6 of 6] Compiling Language.Haskell.Parser ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/Parser.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Language/Haskell/Parser.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/haskell-src-1.0.3.0-L8qCfH4pvJCHVOth3UmRjg
+Registering library for haskell-src-1.0.3.0..

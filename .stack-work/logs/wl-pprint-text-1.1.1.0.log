@@ -1,0 +1,8 @@
+Configuring wl-pprint-text-1.1.1.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for wl-pprint-text-1.1.1.0..
+Building library for wl-pprint-text-1.1.1.0..
+[1 of 2] Compiling Text.PrettyPrint.Leijen.Text ( Text/PrettyPrint/Leijen/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Text/PrettyPrint/Leijen/Text.o )
+[2 of 2] Compiling Text.PrettyPrint.Leijen.Text.Monadic ( Text/PrettyPrint/Leijen/Text/Monadic.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Text/PrettyPrint/Leijen/Text/Monadic.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/wl-pprint-text-1.1.1.0-F5UwL9D6bJn4NVPbX0X3Ox
+Registering library for wl-pprint-text-1.1.1.0..

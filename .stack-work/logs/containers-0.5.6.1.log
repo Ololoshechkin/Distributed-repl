@@ -1,0 +1,13 @@
+Configuring containers-0.5.6.1...
+Preprocessing library for containers-0.5.6.1..
+Building library for containers-0.5.6.1..
+[ 1 of 18] Compiling Data.Sequence    ( Data/Sequence.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Sequence.o )
+
+[;1mData/Sequence.hs:303:10: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Semigroup (Seq a))
+        arising from the superclasses of an instance declaration
+    • In the instance declaration for ‘Monoid (Seq a)’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m303 |[0m[0m instance [;1m[31mMonoid (Seq a)[0m[0m where
+[;1m[34m    |[0m[0m[;1m[31m          ^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m

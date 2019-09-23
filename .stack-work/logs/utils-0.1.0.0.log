@@ -1,0 +1,28 @@
+Preprocessing library for utils-0.1.0.0..
+Building library for utils-0.1.0.0..
+[2 of 2] Compiling NetworkUtils     ( src/NetworkUtils.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/NetworkUtils.o )
+
+[;1msrc/NetworkUtils.hs:7:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Either’ is redundant
+      except perhaps to import instances from ‘Data.Either’
+    To import instances alone, use: import Data.Either()[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m7 |[0m[0m [;1m[35mimport Data.Either[0m[0m
+[;1m[34m  |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/NetworkUtils.hs:13:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The qualified import of ‘Data.ByteString.Lazy’ is redundant
+      except perhaps to import instances from ‘Data.ByteString.Lazy’
+    To import instances alone, use: import Data.ByteString.Lazy()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m13 |[0m[0m [;1m[35mimport qualified Data.ByteString.Lazy       as BS (fromStrict, toStrict)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1msrc/NetworkUtils.hs:51:39: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘requestHandler’ shadows the existing binding
+      bound at src/NetworkUtils.hs:42:18[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m51 |[0m[0m     runMasterImpl endpoint serverDone [;1m[35mrequestHandler[0m[0m = do
+[;1m[34m   |[0m[0m[;1m[35m                                       ^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0mInstalling library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/utils-0.1.0.0-BZjJqld5fnPXsXgmebWNy
+Registering library for utils-0.1.0.0..

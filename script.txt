@@ -1,0 +1,11 @@
+var i = 0
+var a = 1
+var b = (i)+(1)
+var old = a
+while (!((i)==(10))) {
+    var i = (i)+(1)
+}
+var a = b
+var b = (old)+(b)
+PUBLISH u v 2
+return a

@@ -1,0 +1,42 @@
+name:                dbworker
+version:             0.1.0.0
+synopsis:            Synopsis for dbworker
+description:         Database_master is a master for a distributed database
+
+homepage:            https://github.com//haskell_project/tree/master/master#readme
+license:             MIT
+license-file:        LICENSE
+author:              Vadim Briliantov
+maintainer:          v.brilyantov@gmail.com
+copyright:           2019 Vadim Briliantov
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.6.5
+
+executable dbworker
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N -XOverloadedStrings -dynamic
+  build-depends:
+      base  >= 4.8 && < 5
+      , containers
+      , mtl
+      , megaparsec
+      , utf8-string
+      , bytestring
+      , directory
+      , exceptions
+      , network-transport
+      , qtah-qt5
+      , hoppy-runtime >=0.5 && <0.6
+      , network
+      , network-transport
+      , network-transport-tcp
+      , binary
+      , utils
+      , random
+      , unbounded-delays
+  default-language:    Haskell2010

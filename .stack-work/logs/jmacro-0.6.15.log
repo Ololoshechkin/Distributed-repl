@@ -1,0 +1,477 @@
+Configuring jmacro-0.6.15...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for jmacro-0.6.15..
+Building library for jmacro-0.6.15..
+
+[;1mLanguage/Javascript/JMacro/Base.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, OverloadedStrings, TypeFamilies, RankNTypes, DeriveDataTypeable, StandaloneDeriving, FlexibleContexts, TypeSynonymInstances, ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, TypeFamilies, TemplateHaskell, QuasiQuotes, RankNTypes, GADTs #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[1 of 8] Compiling Language.Javascript.JMacro.ParseTH ( Language/Javascript/JMacro/ParseTH.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/ParseTH.o )
+[2 of 8] Compiling Language.Javascript.JMacro.Types ( Language/Javascript/JMacro/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/Types.o )
+
+[;1mLanguage/Javascript/JMacro/Types.hs:6:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m6 |[0m[0m [;1m[35mimport Control.Applicative hiding ((<|>))[0m[0m
+[;1m[34m  |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Types.hs:82:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-top-binds[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘parseConstrainedType’[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m82 |[0m[0m [;1m[35mparseConstrainedType[0m[0m s = runParser constrainedType (0,M.empty) "" s
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[3 of 8] Compiling Language.Javascript.JMacro.Base ( Language/Javascript/JMacro/Base.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/Base.o )
+
+[;1mLanguage/Javascript/JMacro/Base.hs:38:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m38 |[0m[0m [;1m[35mimport Control.Applicative hiding (empty)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:223:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m223 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:228:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m228 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:233:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m233 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:238:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m238 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:589:26: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘cs’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m589 |[0m[0m     jsToDoc (JTRigid ref [;1m[35mcs[0m[0m) = text "[" <> ppRef ref <> text "]"
+[;1m[34m    |[0m[0m[;1m[35m                          ^^[0m[0m
+[0m[0m[0m[4 of 8] Compiling Language.Javascript.JMacro.TypeCheck ( Language/Javascript/JMacro/TypeCheck.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/TypeCheck.o )
+
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:14:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    Module ‘Control.Monad.Error’ is deprecated:
+      Use "Control.Monad.Except" instead[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m14 |[0m[0m [;1m[35mimport Control.Monad.Error[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:98:43: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘cxt’[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m98 |[0m[0m     show (TCS env vars stack frozen varCt [;1m[35mcxt[0m[0m) =
+[;1m[34m   |[0m[0m[;1m[35m                                           ^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:108:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m108 |[0m[0m newtype TMonad a = TMonad ([;1m[35mErrorT[0m[0m String (State TCState) a) deriving (Functor, Monad, MonadState TCState, MonadError String)
+[;1m[34m    |[0m[0m[;1m[35m                            ^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:118:36: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m118 |[0m[0m evalTMonad (TMonad x) = evalState ([;1m[35mrunErrorT[0m[0m x) tcStateEmpty
+[;1m[34m    |[0m[0m[;1m[35m                                    ^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:121:34: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m121 |[0m[0m runTMonad (TMonad x) = runState ([;1m[35mrunErrorT[0m[0m x) tcStateEmpty
+[;1m[34m    |[0m[0m[;1m[35m                                  ^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:173:19: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘x’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:136:19[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m173 |[0m[0m       intsToNames [;1m[35mx[0m[0m = fmap (either id go) x
+[;1m[34m    |[0m[0m[;1m[35m                   ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:174:17: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘go’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:141:7[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m174 |[0m[0m           where [;1m[35mgo[0m[0m i = mkUnique (S.fromList $ lefts $ M.elems x) (int2Name i) 0
+[;1m[34m    |[0m[0m[;1m[35m                 ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:286:23: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘vr’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m286 |[0m[0m lookupConstraintsList [;1m[35mvr[0m[0m@(_,ref) = do
+[;1m[34m    |[0m[0m[;1m[35m                       ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:329:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘vars’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m329 |[0m[0m                   JTForall [;1m[35mvars[0m[0m t -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                            ^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:329:33: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘t’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:326:12[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m329 |[0m[0m                   JTForall vars [;1m[35mt[0m[0m -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                                 ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:329:33: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘t’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m329 |[0m[0m                   JTForall vars [;1m[35mt[0m[0m -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                                 ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:335:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘t’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:326:12[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m335 |[0m[0m                   JTRecord [;1m[35mt[0m[0m m -> occursCheck ref t >>
+[;1m[34m    |[0m[0m[;1m[35m                            ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:364:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘vars’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m364 |[0m[0m                   JTForall [;1m[35mvars[0m[0m t -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                            ^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:364:33: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘t’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:361:14[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m364 |[0m[0m                   JTForall vars [;1m[35mt[0m[0m -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                                 ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:364:33: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘t’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m364 |[0m[0m                   JTForall vars [;1m[35mt[0m[0m -> normalizeConstraints . (c : ) =<< lookupConstraintsList vr
+[;1m[34m    |[0m[0m[;1m[35m                                 ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:370:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘t’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:361:14[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m370 |[0m[0m                   JTRecord [;1m[35mt[0m[0m m -> occursCheck ref t >>
+[;1m[34m    |[0m[0m[;1m[35m                            ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:585:13: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘go’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:547:7[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m585 |[0m[0m             [;1m[35mgo[0m[0m accum (r:rs)
+[;1m[34m    |[0m[0m[;1m[35m             ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:594:16: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘i’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m594 |[0m[0m       findLoop [;1m[35mi[0m[0m [] = Nothing
+[;1m[34m    |[0m[0m[;1m[35m                ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:660:24: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘t’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m660 |[0m[0m           Just (SVType [;1m[35mt[0m[0m) -> return Nothing
+[;1m[34m    |[0m[0m[;1m[35m                        ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:663:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-signatures[0m[0m[;1m][0m[0m[;1m
+    Top-level binding with no type signature:
+      resolveType :: JType -> TMonad JType[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m663 |[0m[0m [;1m[35mresolveType[0m[0m = resolveTypeGen composOpM1
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:664:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-signatures[0m[0m[;1m][0m[0m[;1m
+    Top-level binding with no type signature:
+      resolveTypeShallow :: JType -> TMonad JType[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m664 |[0m[0m [;1m[35mresolveTypeShallow[0m[0m = resolveTypeGen (const return)
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:729:22: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘mbName’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m729 |[0m[0m       go (JTFree vr@([;1m[35mmbName[0m[0m, ref))
+[;1m[34m    |[0m[0m[;1m[35m                      ^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:745:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘t’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:742:22[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m745 |[0m[0m       go [;1m[35mt[0m[0m@(JTRigid (_,ref) _)
+[;1m[34m    |[0m[0m[;1m[35m          ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:759:39: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘xt’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:753:6[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m759 |[0m[0m                                       [;1m[35mxt[0m[0m <- prettyType x
+[;1m[34m    |[0m[0m[;1m[35m                                       ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:760:39: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wname-shadowing[0m[0m[;1m][0m[0m[;1m
+    This binding for ‘yt’ shadows the existing binding
+      bound at Language/Javascript/JMacro/TypeCheck.hs:754:6[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m760 |[0m[0m                                       [;1m[35myt[0m[0m <- prettyType y
+[;1m[34m    |[0m[0m[;1m[35m                                       ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:776:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘yt’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m776 |[0m[0m     go xt [;1m[35myt[0m[0m@(JTForall vars t) = do
+[;1m[34m    |[0m[0m[;1m[35m           ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:805:57: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m805 |[0m[0m   b <- (mapM_ (<: res) xs >> return True) `catchError` \[;1m[35me[0m[0m -> return False
+[;1m[34m    |[0m[0m[;1m[35m                                                         ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:830:24: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘t’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m830 |[0m[0m              (JTRecord [;1m[35mt[0m[0m m) -> case M.lookup i m of
+[;1m[34m    |[0m[0m[;1m[35m                        ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:838:24: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m838 |[0m[0m     typecheck (IdxExpr [;1m[35me[0m[0m e1) = undefined --this is tricky
+[;1m[34m    |[0m[0m[;1m[35m                        ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:838:26: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘e1’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m838 |[0m[0m     typecheck (IdxExpr e [;1m[35me1[0m[0m) = undefined --this is tricky
+[;1m[34m    |[0m[0m[;1m[35m                          ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:866:24: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m866 |[0m[0m     typecheck (NewExpr [;1m[35me[0m[0m) = undefined --yipe
+[;1m[34m    |[0m[0m[;1m[35m                        ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:932:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wincomplete-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match(es) are non-exhaustive
+    In an equation for ‘typecheck’:
+        Patterns not matched:
+            (LabelStat _ _)
+            (ContinueStat _)[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m932 |[0m[0m     [;1m[35mtypecheck (DeclStat ident Nothing) = newVarDecl ident >> return JTStat[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:942:27: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘e’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m942 |[0m[0m     typecheck (SwitchStat [;1m[35me[0m[0m xs d) = undefined -- check e, unify e with firsts, check seconds, take glb of seconds
+[;1m[34m    |[0m[0m[;1m[35m                           ^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:942:29: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘xs’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m942 |[0m[0m     typecheck (SwitchStat e [;1m[35mxs[0m[0m d) = undefined -- check e, unify e with firsts, check seconds, take glb of seconds
+[;1m[34m    |[0m[0m[;1m[35m                             ^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:942:32: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-matches[0m[0m[;1m][0m[0m[;1m
+    Defined but not used: ‘d’[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m942 |[0m[0m     typecheck (SwitchStat e xs [;1m[35md[0m[0m) = undefined -- check e, unify e with firsts, check seconds, take glb of seconds
+[;1m[34m    |[0m[0m[;1m[35m                                ^[0m[0m
+[0m[0m[0m[5 of 8] Compiling Language.Javascript.JMacro.QQ ( Language/Javascript/JMacro/QQ.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/QQ.o )
+
+[;1mLanguage/Javascript/JMacro/QQ.hs:17:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m17 |[0m[0m [;1m[35mimport Control.Applicative hiding ((<|>),many,optional)[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:24:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m24 |[0m[0m [;1m[35mimport Data.Monoid[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:56:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-fields[0m[0m[;1m][0m[0m[;1m
+    • Fields of ‘QuasiQuoter’ not initialised: quoteType, quoteDec
+    • In the expression:
+        QuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}
+      In an equation for ‘jmacro’:
+          jmacro = QuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m56 |[0m[0m jmacro = [;1m[35mQuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:60:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-fields[0m[0m[;1m][0m[0m[;1m
+    • Fields of ‘QuasiQuoter’ not initialised: quoteType, quoteDec
+    • In the expression:
+        QuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}
+      In an equation for ‘jmacroE’:
+          jmacroE
+            = QuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m60 |[0m[0m jmacroE = [;1m[35mQuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[6 of 8] Compiling Language.Javascript.JMacro.Prelude ( Language/Javascript/JMacro/Prelude.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/Prelude.o )
+[7 of 8] Compiling Language.Javascript.JMacro ( Language/Javascript/JMacro.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro.o )
+[8 of 8] Compiling Language.Javascript.JMacro.Util ( Language/Javascript/JMacro/Util.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Javascript/JMacro/Util.o )
+Preprocessing executable 'jmacro' for jmacro-0.6.15..
+Building executable 'jmacro' for jmacro-0.6.15..
+
+[;1mLanguage/Javascript/JMacro/Base.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, OverloadedStrings, TypeFamilies, RankNTypes, DeriveDataTypeable, StandaloneDeriving, FlexibleContexts, TypeSynonymInstances, ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, TypeFamilies, TemplateHaskell, QuasiQuotes, RankNTypes, GADTs #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1m<no location info>: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-home-modules[0m[0m[;1m][0m[0m[;1m
+    These modules are needed for compilation but not listed in your .cabal file's other-modules: Language.Javascript.JMacro[0m[0m
+[0m[0m[0m[1 of 9] Compiling Language.Javascript.JMacro.ParseTH ( Language/Javascript/JMacro/ParseTH.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/ParseTH.o )
+[2 of 9] Compiling Language.Javascript.JMacro.Types ( Language/Javascript/JMacro/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/Types.o )
+[3 of 9] Compiling Language.Javascript.JMacro.Base ( Language/Javascript/JMacro/Base.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/Base.o )
+
+[;1mLanguage/Javascript/JMacro/Base.hs:223:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m223 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:228:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m228 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:233:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m233 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/Base.hs:238:5: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘jfromGADT’: jfromGADT _ = ...[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m238 |[0m[0m     [;1m[35mjfromGADT _ = error "impossible"[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[4 of 9] Compiling Language.Javascript.JMacro.TypeCheck ( Language/Javascript/JMacro/TypeCheck.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/TypeCheck.o )
+
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:14:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    Module ‘Control.Monad.Error’ is deprecated:
+      Use "Control.Monad.Except" instead[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m14 |[0m[0m [;1m[35mimport Control.Monad.Error[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:108:28: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m108 |[0m[0m newtype TMonad a = TMonad ([;1m[35mErrorT[0m[0m String (State TCState) a) deriving (Functor, Monad, MonadState TCState, MonadError String)
+[;1m[34m    |[0m[0m[;1m[35m                            ^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:118:36: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m118 |[0m[0m evalTMonad (TMonad x) = evalState ([;1m[35mrunErrorT[0m[0m x) tcStateEmpty
+[;1m[34m    |[0m[0m[;1m[35m                                    ^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/TypeCheck.hs:121:34: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wdeprecations[0m[0m[;1m][0m[0m[;1m
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Error, but defined in transformers-0.5.2.0:Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m121 |[0m[0m runTMonad (TMonad x) = runState ([;1m[35mrunErrorT[0m[0m x) tcStateEmpty
+[;1m[34m    |[0m[0m[;1m[35m                                  ^^^^^^^^^[0m[0m
+[0m[0m[0m[5 of 9] Compiling Language.Javascript.JMacro.QQ ( Language/Javascript/JMacro/QQ.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/QQ.o )
+
+[;1mLanguage/Javascript/JMacro/QQ.hs:56:10: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-fields[0m[0m[;1m][0m[0m[;1m
+    • Fields of ‘QuasiQuoter’ not initialised: quoteType, quoteDec
+    • In the expression:
+        QuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}
+      In an equation for ‘jmacro’:
+          jmacro = QuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m56 |[0m[0m jmacro = [;1m[35mQuasiQuoter {quoteExp = quoteJMExp, quotePat = quoteJMPat}[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:60:11: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-fields[0m[0m[;1m][0m[0m[;1m
+    • Fields of ‘QuasiQuoter’ not initialised: quoteType, quoteDec
+    • In the expression:
+        QuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}
+      In an equation for ‘jmacroE’:
+          jmacroE
+            = QuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m60 |[0m[0m jmacroE = [;1m[35mQuasiQuoter {quoteExp = quoteJMExpE, quotePat = quoteJMPatE}[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m[6 of 9] Compiling Language.Javascript.JMacro.Prelude ( Language/Javascript/JMacro/Prelude.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/Prelude.o )
+[7 of 9] Compiling Language.Javascript.JMacro ( Language/Javascript/JMacro.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro.o )
+[8 of 9] Compiling Language.Javascript.JMacro.Util ( Language/Javascript/JMacro/Util.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Language/Javascript/JMacro/Util.o )
+[9 of 9] Compiling Main             ( Language/Javascript/JMacro/Executable.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro-tmp/Main.o )
+
+[;1mLanguage/Javascript/JMacro/Base.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, OverloadedStrings, TypeFamilies, RankNTypes, DeriveDataTypeable, StandaloneDeriving, FlexibleContexts, TypeSynonymInstances, ScopedTypeVariables, GADTs, GeneralizedNewtypeDeriving #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mLanguage/Javascript/JMacro/QQ.hs:1:55: [;1m[35mwarning:[0m[0m[;1m[0m[0m[;1m
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m1 |[0m[0m {-# LANGUAGE FlexibleInstances, UndecidableInstances, [;1m[35mOverlappingInstances[0m[0m, TypeFamilies, TemplateHaskell, QuasiQuotes, RankNTypes, GADTs #-}
+[;1m[34m  |[0m[0m[;1m[35m                                                       ^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1m<no location info>: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wmissing-home-modules[0m[0m[;1m][0m[0m[;1m
+    These modules are needed for compilation but not listed in your .cabal file's other-modules: Language.Javascript.JMacro[0m[0m
+[0m[0m[0mLinking .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/jmacro/jmacro ...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/jmacro-0.6.15-K8lYnD6IOfQ42wzE1TdnlV
+Installing executable jmacro in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/bin
+Registering library for jmacro-0.6.15..

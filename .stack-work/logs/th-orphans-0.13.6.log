@@ -1,0 +1,7 @@
+Configuring th-orphans-0.13.6...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for th-orphans-0.13.6..
+Building library for th-orphans-0.13.6..
+[1 of 1] Compiling Language.Haskell.TH.Instances ( src/Language/Haskell/TH/Instances.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Haskell/TH/Instances.o )
+Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/th-orphans-0.13.6-LanFCFXr7QdKtRVZkhVI9Z
+Registering library for th-orphans-0.13.6..
