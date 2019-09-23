@@ -1,8 +1,0 @@
-Configuring unbounded-delays-0.1.1.0...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for unbounded-delays-0.1.1.0..
-Building library for unbounded-delays-0.1.1.0..
-[1 of 2] Compiling Control.Concurrent.Thread.Delay ( Control/Concurrent/Thread/Delay.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Concurrent/Thread/Delay.o )
-[2 of 2] Compiling Control.Concurrent.Timeout ( Control/Concurrent/Timeout.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Concurrent/Timeout.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/unbounded-delays-0.1.1.0-9rdvMSlv4bPE477VFM26yN
-Registering library for unbounded-delays-0.1.1.0..

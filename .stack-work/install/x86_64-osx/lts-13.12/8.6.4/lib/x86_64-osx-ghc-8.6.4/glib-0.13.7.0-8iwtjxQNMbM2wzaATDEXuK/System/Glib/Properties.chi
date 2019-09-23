@@ -1,2 +1,0 @@
-C->Haskell Interface Version C->Haskell Compiler, version 0.13.13 (gtk2hs branch) "Bin IO", 27 May 2012
-([((True,"GObject"),(False,ForeignPtr,Just "GObject","GObject")),((True,"GValue"),(False,Ptr,Just "GValue","GValue"))],[("GObject",Pointer {ptrTypeHO = ForeignPtr, isNewtypeHO = True}),("GValue",Pointer {ptrTypeHO = Ptr, isNewtypeHO = True})])

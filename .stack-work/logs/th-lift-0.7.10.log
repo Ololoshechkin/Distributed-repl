@@ -1,7 +1,0 @@
-Configuring th-lift-0.7.10...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for th-lift-0.7.10..
-Building library for th-lift-0.7.10..
-[1 of 1] Compiling Language.Haskell.TH.Lift ( src/Language/Haskell/TH/Lift.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Language/Haskell/TH/Lift.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/th-lift-0.7.10-BH3gL2rcTea4FV2x8taNJ5
-Registering library for th-lift-0.7.10..

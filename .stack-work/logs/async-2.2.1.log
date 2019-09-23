@@ -1,6 +1,0 @@
-Configuring async-2.2.1...
-Preprocessing library for async-2.2.1..
-Building library for async-2.2.1..
-[1 of 1] Compiling Control.Concurrent.Async ( Control/Concurrent/Async.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Control/Concurrent/Async.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/async-2.2.1-4fWSSJ8SFccIxQJVItkRnX
-Registering library for async-2.2.1..

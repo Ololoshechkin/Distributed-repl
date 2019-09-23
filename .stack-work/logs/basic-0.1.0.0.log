@@ -1,7 +1,0 @@
-Configuring basic-0.1.0.0...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for basic-0.1.0.0..
-Building library for basic-0.1.0.0..
-[1 of 1] Compiling Data.Basic       ( Data/Basic.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Basic.o )
-Installing library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/basic-0.1.0.0-Agdg3kjVr18GsezCMfDoag
-Registering library for basic-0.1.0.0..

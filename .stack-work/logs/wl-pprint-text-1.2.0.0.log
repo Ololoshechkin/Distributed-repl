@@ -1,7 +1,0 @@
-Configuring wl-pprint-text-1.2.0.0...
-Preprocessing library for wl-pprint-text-1.2.0.0..
-Building library for wl-pprint-text-1.2.0.0..
-[1 of 2] Compiling Text.PrettyPrint.Leijen.Text ( Text/PrettyPrint/Leijen/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Text/PrettyPrint/Leijen/Text.o )
-[2 of 2] Compiling Text.PrettyPrint.Leijen.Text.Monadic ( Text/PrettyPrint/Leijen/Text/Monadic.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Text/PrettyPrint/Leijen/Text/Monadic.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/wl-pprint-text-1.2.0.0-L6i9Q0yxJZoBCBd4YxCMOZ
-Registering library for wl-pprint-text-1.2.0.0..

@@ -1,7 +1,0 @@
-Configuring data-default-instances-dlist-0.0.1...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for data-default-instances-dlist-0.0.1..
-Building library for data-default-instances-dlist-0.0.1..
-[1 of 1] Compiling Data.Default.Instances.DList ( Data/Default/Instances/DList.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Data/Default/Instances/DList.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/data-default-instances-dlist-0.0.1-IlYPMkK671u6y0SAhqz2xi
-Registering library for data-default-instances-dlist-0.0.1..

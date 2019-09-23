@@ -1,6 +1,0 @@
-Configuring xdg-basedir-0.2.2...
-Preprocessing library for xdg-basedir-0.2.2..
-Building library for xdg-basedir-0.2.2..
-[1 of 1] Compiling System.Environment.XDG.BaseDir ( System/Environment/XDG/BaseDir.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/System/Environment/XDG/BaseDir.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-14.1/8.6.5/lib/x86_64-osx-ghc-8.6.5/xdg-basedir-0.2.2-5JeadMzUyJb8NlvsA3m40x
-Registering library for xdg-basedir-0.2.2..

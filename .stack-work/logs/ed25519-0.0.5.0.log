@@ -1,6 +1,0 @@
-Configuring ed25519-0.0.5.0...
-Preprocessing library for ed25519-0.0.5.0..
-Building library for ed25519-0.0.5.0..
-[1 of 1] Compiling Crypto.Sign.Ed25519 ( src/Crypto/Sign/Ed25519.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Crypto/Sign/Ed25519.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-13.12/8.6.4/lib/x86_64-osx-ghc-8.6.4/ed25519-0.0.5.0-JRZm9qkjuKdJzhMNs9MSTR
-Registering library for ed25519-0.0.5.0..

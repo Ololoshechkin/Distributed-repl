@@ -1,8 +1,0 @@
-Configuring control-0.1.1.0...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for control-0.1.1.0..
-Building library for control-0.1.1.0..
-[1 of 2] Compiling Control.Monad.Trans.Control ( Control/Monad/Trans/Control.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Monad/Trans/Control.o )
-[2 of 2] Compiling Control.Monad.Base.Control ( Control/Monad/Base/Control.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Control/Monad/Base/Control.o )
-Installing library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/control-0.1.1.0-1kcYflgwy0s3uymTwpDqwZ
-Registering library for control-0.1.1.0..

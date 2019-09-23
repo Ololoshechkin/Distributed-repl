@@ -1,7 +1,0 @@
-Configuring transformers-compat-0.5.1.4...
-Preprocessing library for transformers-compat-0.5.1.4..
-Building library for transformers-compat-0.5.1.4..
-[1 of 2] Compiling Control.Monad.Trans.Instances ( src/Control/Monad/Trans/Instances.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Control/Monad/Trans/Instances.o )
-[2 of 2] Compiling Paths_transformers_compat ( .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/autogen/Paths_transformers_compat.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Paths_transformers_compat.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/nightly-2017-10-13/8.2.1/lib/x86_64-osx-ghc-8.2.1/transformers-compat-0.5.1.4-6XdHjMyra9X8Y4YVy0NcTP
-Registering library for transformers-compat-0.5.1.4..

@@ -1,8 +1,0 @@
-Configuring network-transport-0.5.2...
-Preprocessing library for network-transport-0.5.2..
-Building library for network-transport-0.5.2..
-[1 of 3] Compiling Network.Transport ( src/Network/Transport.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Network/Transport.o )
-[2 of 3] Compiling Network.Transport.Internal ( src/Network/Transport/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Network/Transport/Internal.o )
-[3 of 3] Compiling Network.Transport.Util ( src/Network/Transport/Util.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Network/Transport/Util.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/nightly-2017-10-13/8.2.1/lib/x86_64-osx-ghc-8.2.1/network-transport-0.5.2-sRuKVC2xygJFuUoUmg44k
-Registering library for network-transport-0.5.2..

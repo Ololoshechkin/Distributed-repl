@@ -1,9 +1,0 @@
-Configuring hoppy-runtime-0.5.1...
-Preprocessing library for hoppy-runtime-0.5.1..
-Building library for hoppy-runtime-0.5.1..
-[1 of 2] Compiling Foreign.Hoppy.Runtime ( src/Foreign/Hoppy/Runtime.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Foreign/Hoppy/Runtime.o )
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-[2 of 2] Compiling Foreign.Hoppy.Setup ( src/Foreign/Hoppy/Setup.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.0.2/build/Foreign/Hoppy/Setup.o )
-Installing library in /Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/nightly-2017-10-13/8.2.1/lib/x86_64-osx-ghc-8.2.1/hoppy-runtime-0.5.1-2WA5bOAt2hk7oYsyNSg4pC
-Registering library for hoppy-runtime-0.5.1..

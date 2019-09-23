@@ -1,9 +1,0 @@
-Configuring uuid-types-1.0.3...
-clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
-Preprocessing library for uuid-types-1.0.3..
-Building library for uuid-types-1.0.3..
-[1 of 3] Compiling Data.UUID.Types.Internal.Builder ( Data/UUID/Types/Internal/Builder.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Data/UUID/Types/Internal/Builder.o )
-[2 of 3] Compiling Data.UUID.Types.Internal ( Data/UUID/Types/Internal.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Data/UUID/Types/Internal.o )
-[3 of 3] Compiling Data.UUID.Types  ( Data/UUID/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.0.1.0/build/Data/UUID/Types.o )
-Installing library in /Users/Vadim/.stack/snapshots/x86_64-osx/lts-11.22/8.2.2/lib/x86_64-osx-ghc-8.2.2/uuid-types-1.0.3-8D6G2gMR5MTG6bDI7qL1XL
-Registering library for uuid-types-1.0.3..
