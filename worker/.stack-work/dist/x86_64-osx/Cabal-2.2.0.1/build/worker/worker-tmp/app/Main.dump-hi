@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-09-22 16:54:47.576719 UTC
+2019-09-26 00:02:49.654728 UTC
 
 interface main:Main 8044
-  interface hash: 411704380dc9c8090fc9b57eb413f8af
+  interface hash: 037a000af0880bd7000b59b5aebfa6cb
   ABI hash: a6dfc3d420d5dd7caf1ef08b2cbcfd99
   export-list hash: 927ea8e53ed244b98c3fab01639faf24
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -112,7 +112,7 @@ import  -/  network-2.6.3.6:Network.Socket.Internal af2cb1ca411a338f4846b994baab
 import  -/  network-transport-0.5.2:Network.Transport 18cb17ad2d91e2c94ab38d1745341964
 import  -/  utils-0.1.0.0:Messages d092de2cd317fb3a419e83b1cbab3b00
 import  -/  utils-0.1.0.0:NetworkUtils b57898109c42e05ce4e6280cb5fbe835
-import  -/  worker-0.1.0.0:Lib 835f995cc15c92e510f4c2871c42a028
+import  -/  worker-0.1.0.0:Lib 3036fc59243c95dc6a5cb093c17c5966
 d56ff4f63b86c51a0c4723d8bb2f9d3f
   $tc'ServerWorker :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,

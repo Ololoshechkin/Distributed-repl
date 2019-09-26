@@ -12,8 +12,9 @@ module Lib
         , LoadCallback
     ) where
 
-import           Control.Monad.State        (MonadState, MonadIO, runStateT, put, get, StateT, liftIO)
+import           Control.Monad.Reader (MonadReader, MonadIO, runReaderT, ask, ReaderT, liftIO)
 import qualified Data.Map.Strict            as Map
+import           Data.IORef                 (IORef, modifyIORef, newIORef, readIORef)
 import           Messages
 import           Control.Monad.Catch
 
@@ -25,13 +26,13 @@ data CompilationException = CompilationException String deriving (Show)
 
 instance Exception CompilationException
 
-newtype ScriptContext t = ScriptContext {runStmt :: StateT VariableMap IO t}
+newtype ScriptContext t = ScriptContext {runStmt :: ReaderT (IORef VariableMap) IO t}
   deriving (
       Functor
     , Applicative
     , Monad
     , MonadIO
-    , MonadState VariableMap
+    , MonadReader (IORef VariableMap)
     , MonadThrow
     , MonadCatch
     )
@@ -49,41 +50,43 @@ executeScript prog db = execScript Map.empty prog
     execScript initMap = (executeScriptWithContext initMap) . executeProgramWithErrors
 
     executeScriptWithContext :: VariableMap -> ScriptContext t -> IO t
-    executeScriptWithContext initMap ctx = fmap fst (runStateT (runStmt ctx) initMap)
+    executeScriptWithContext initMap ctx = do
+      mapRef <- newIORef initMap
+      runReaderT (runStmt ctx) mapRef
 
     handleCE :: (Monad t) => CompilationException -> t ProgramResult
     handleCE (CompilationException descr) = return $ CompilationError descr
 
-    executeProgramWithErrors :: (MonadState VariableMap t, MonadIO t, MonadCatch t) => Program -> t ProgramResult
+    executeProgramWithErrors :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadCatch t) => Program -> t ProgramResult
     executeProgramWithErrors program = catch (fmap (Success . show) (executeProgram program)) handleCE
 
-    executeProgram :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => Program -> t Value
+    executeProgram :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => Program -> t Value
     executeProgram (Program statements retStatement) = do
       _ <- executeStatements statements
       evaluateReturnStatement retStatement
 
-    evaluateReturnStatement :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => ReturnStatement -> t Value
+    evaluateReturnStatement :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => ReturnStatement -> t Value
     evaluateReturnStatement (ReturnStatement expr) = evaluateExpr expr
 
-    executeStatements :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => [Statement] -> t ()
+    executeStatements :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => [Statement] -> t ()
     executeStatements [] = return ()
     executeStatements (s : r) = do
       _ <- executeStatement s
       executeStatements r
 
-    executeStatement :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => Statement -> t ()
+    executeStatement :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => Statement -> t ()
     executeStatement s  = case s of
       AssignmentStatement (Assignment var expr) -> do
         value <- evaluateExpr expr
-        map_  <- get
-        put $ Map.insert var value map_
+        map_ <- ask
+        liftIO $ modifyIORef map_ (Map.insert var value)
       LoopStatement loop -> executeLoop loop
       InvocationStatement inv -> do
         _ <- evaluateExpr $ InvocationExpression inv
         return ()
       DBComandStatement cmd -> evaluateDBComand cmd
 
-    evaluateDBComand :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => DBComand -> t ()
+    evaluateDBComand :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => DBComand -> t ()
     evaluateDBComand (PublishDBComand (PublishComand ke ve r)) = do
       k <- evaluateExpr ke
       case k of
@@ -100,13 +103,13 @@ executeScript prog db = execScript Map.empty prog
           dbResp <- liftIO $ (load db) ks
           case dbResp of 
             LoadResult vs -> do
-              map_  <- get
-              put $ Map.insert name (StringValue vs) map_
+              map_ <- ask
+              liftIO $ modifyIORef map_ (Map.insert name (StringValue vs))
             LoadError e   -> throwM $ CompilationException $ "LOAD of the key " ++ (show k) ++ " returned error:\n" ++ e
             _             -> throwM $ CompilationException $ "Unexpected result for LOAD " ++ (show k) ++ ":\n" ++ (show dbResp)
         _ -> throwM $ CompilationException $ "DB comands operate on strings only, found : " ++ (show k) ++ " as a key for LOAD"
 
-    executeLoop :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => Loop -> t ()
+    executeLoop :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => Loop -> t ()
     executeLoop (While cond statements) = do
       value <- evaluateExpr cond
       case value of 
@@ -119,14 +122,14 @@ executeScript prog db = execScript Map.empty prog
         _          -> throwM $ CompilationException $ "Loop condition \"" ++ (show cond) ++ "\" has incorrect type (bool expected)"
 
 
-    evaluateExprs :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => [Expression] -> t [Value]
+    evaluateExprs :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => [Expression] -> t [Value]
     evaluateExprs [] = return []
     evaluateExprs (e : r) = do
       s <- evaluateExpr e
       rs <- evaluateExprs r
       return $ s : rs
 
-    evaluateExpr :: (MonadState VariableMap t, MonadIO t, MonadThrow t) => Expression -> t Value
+    evaluateExpr :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => Expression -> t Value
     evaluateExpr (OperatorExpression operator) = do
       case operator of 
         UnaryOperator opType op expr -> do
@@ -202,7 +205,8 @@ executeScript prog db = execScript Map.empty prog
             LambdaValue _ -> throwM $ CompilationException "Unexpected lambda expression in operator statement"
 
     evaluateExpr (InvocationExpression (Invocation name args)) = do
-      map_  <- get
+      mapRef  <- ask
+      map_    <- liftIO $ readIORef mapRef
       case (Map.lookup name map_) of
         Just value -> case value of 
           LambdaValue lambda -> do
@@ -227,7 +231,8 @@ executeScript prog db = execScript Map.empty prog
     evaluateExpr (LambdaDefExpression lambda) = return $ LambdaValue lambda
     evaluateExpr (BracesExpression e) = evaluateExpr e
     evaluateExpr (VariableExpression name) = do
-      map_  <- get
+      mapRef  <- ask
+      map_    <- liftIO $ readIORef mapRef
       case (Map.lookup name map_) of
         Just value -> return value
         Nothing -> throwM $ CompilationException $ "Variable \"" ++ name ++ "\" was not found"
