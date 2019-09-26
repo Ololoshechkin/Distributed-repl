@@ -9,9 +9,9 @@ module Lib
     ) where
 
 import           Data.Void                  (Void)
-import           Text.Megaparsec            -- Todo: imports
-import           Text.Megaparsec.Char       -- Todo: imports
-import qualified Text.Megaparsec.Char.Lexer as L -- Todo: imports
+import           Text.Megaparsec            -- TODO: (<|>) is not working with manual imports
+import           Text.Megaparsec.Char       (space, space1, char, string, letterChar, alphaNumChar)
+import qualified Text.Megaparsec.Char.Lexer as L (decimal, lexeme, space)
 import           Messages
 
 type Parser = Parsec Void String
@@ -68,7 +68,7 @@ parseProgram = do
 
 parseStatement :: Parser Statement
 parseStatement = try $ do
-    statement <- ((fmap LoopStatement (logParser "parseLoop" parseLoop)) <|> (fmap AssignmentStatement parseAssignment) <|> (fmap DBComandStatement (logParser "parseDBComand" parseDBComand)) <|> (fmap InvocationStatement parseInvocation))
+    statement <- ((fmap LoopStatement parseLoop) <|> (fmap AssignmentStatement parseAssignment) <|> (fmap DBComandStatement parseDBComand) <|> (fmap InvocationStatement parseInvocation))
     return statement
 
 parseAssignment :: Parser Assignment
@@ -80,13 +80,13 @@ parseAssignment = try $ do
     return $ Assignment name expr
 
 parseExpression :: Parser Expression
-parseExpression = (fmap ConstantExpression (logParser "parseConstant" parseConstant)) 
-              <|> (fmap OperatorExpression (logParser "parseOperator" parseOperator)) 
-              <|> (fmap IfThenElseExpression (logParser "parseIfThenElse" parseIfThenElse))
-              <|> (fmap LambdaDefExpression (logParser "parseLambdaDef" parseLambdaDef))
-              <|> (fmap InvocationExpression (logParser "parseInvocation" parseInvocation))
-              <|> (logParser "parseBracesExpression" parseBracesExpression)
-              <|> (logParser "parseVariableExpression" parseVariableExpression)
+parseExpression = (fmap ConstantExpression parseConstant)
+              <|> (fmap OperatorExpression parseOperator)
+              <|> (fmap IfThenElseExpression parseIfThenElse)
+              <|> (fmap LambdaDefExpression parseLambdaDef)
+              <|> (fmap InvocationExpression parseInvocation)
+              <|> parseBracesExpression
+              <|> parseVariableExpression
 
 parseLoop :: Parser Loop
 parseLoop = try $ do
@@ -123,11 +123,6 @@ parseInvocation = try $ do
     args    <- many parseExpression
     _       <- char ')'
     return $ Invocation funName args
-
-logParser :: (Show a) => String -> Parser a -> Parser a
-logParser _ p = do
-    res <- p
-    return res
 
 parseConstant :: Parser Constant
 parseConstant = (parseIntConstant <|> parseStringConstant <|> parseBoolConstant) where
