@@ -114,6 +114,8 @@ load key.
 Смысл БД в том, что в коде есть команды load k и publish k v r.
 И если несколько клиннтов, то они могут шарить общие переменные или переиспользовать старые.
 
+Пример "чата" с использованием БД:
+
 ![Image 7](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image7.png)
 
 Указания по запуску:
