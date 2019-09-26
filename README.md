@@ -1,20 +1,22 @@
 # haskell_project
 
-Проект распределенный и состоит из следующих независимых компонент:
-1. Клиент с UI, где есть поле для ввода кода, поле с выводом результата, кнопки compile, open, save и quit:
+Проект распределенный и состоит из следующих независимых компонент:\
+
+1. Клиент с UI, где есть поле для ввода кода, поле с выводом результата, кнопки compile, open, save и quit:\
+
 ![Image 1](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image1.png)
 ![Image 2](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image2.png)
 ![Image 3](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image3.png)
-
-Также всплывающие сообщения о различных (сетевых/парсинга/компиляции) ошибках.
+ \
+Также всплывающие сообщения о различных (сетевых/парсинга/компиляции) ошибках.\
 
 ![Image 4](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image4.png)
 ![Image 5](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image5.png)
 ![Image 6](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image6.png)
+ \
+Клиент умеет парсить код на моем языке программирования, сериализовать AST в байты и отправлять мастеру.\
 
-Клиент умеет парсить код на моем языке программирования, сериализовать AST в байты и отправлять мастеру.
-
-Грамматика поддерживаемого языка:
+Грамматика поддерживаемого языка:\
 * Program = (Statement*) ReturnStatement
 * Statement = (Assignment | Loop | Invocation | DBComand)
 * Assignment = 'var' Identifier '=' Expression
@@ -30,9 +32,9 @@
 * UnaryOpExpr = UnaryOp BracesExpression
 * BinaryOpExpr = BracesExpression BinaryOp BracesExpression
 * UnaryOp : '+' | '-' | '!'
-* BinaryOp : '+' | '-' | '*' | '/' | '==' | '!=' | '<' | '&&' | '||' | '::' | '##'
-Note: '::' is an equivalent of integer operator '==' but for Strings
-Note: '##' is an equivalent of integer operator '+' but for Strings
+* BinaryOp : '+' | '-' | '*' | '/' | '==' | '!=' | '<' | '&&' | '||' | '::' | '##' \
+Note: '::' is an equivalent of integer operator '==' but for Strings \
+Note: '##' is an equivalent of integer operator '+' but for Strings \
 * IfThenElseExpression = 'if' BracesExpression 'then' BracesExpression 'else' BracesExpression
 * LambdaDefExpression = 'function' '(' (Identifier (',' Identifier)*)? ')' '{' Program '}'
 * BracesExpression = '(' Expression ')'
@@ -45,24 +47,24 @@ Note: '##' is an equivalent of integer operator '+' but for Strings
 * Key = BracesExpression of type String
 * ReturnStatement = 'return' Expression
 
-Пример программы:
-`var             i = 0
-var s = "a"
-var inc  = function(x) {
-	var y = (x) + (1)
-	return y
-}
-var isOdd = function(x) {
-	var y = ((x)  / (2)) * (2)
-	var res = if ((x) == (y)) then (true) else (false)
-	return res
-}
-while ((i) < (5)) {
-         var i = inc(i)
-         var s = if (isOdd(i)) then ((s) ## ("c")) else ((s) ## ("y"))
-}
-PUBLISH (s) ("aaa") 1
-LOAD (s) q
+Пример программы: \
+`var             i = 0 \
+var s = "a" \
+var inc  = function(x) { \
+	var y = (x) + (1) \
+	return y \
+} \
+var isOdd = function(x) { \
+	var y = ((x)  / (2)) * (2) \
+	var res = if ((x) == (y)) then (true) else (false) \
+	return res \
+} \
+while ((i) < (5)) { \
+         var i = inc(i) \
+         var s = if (isOdd(i)) then ((s) ## ("c")) else ((s) ## ("y")) \
+} \
+PUBLISH (s) ("aaa") 1 \
+LOAD (s) q \
 return q `
 
 2. Мастер:
