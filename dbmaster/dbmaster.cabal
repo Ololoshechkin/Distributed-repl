@@ -41,4 +41,5 @@ executable dbmaster
       , unbounded-delays
       , lens
       , stm
+      , MonadRandom
   default-language:    Haskell2010

@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/bin"
-libdir     = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/dbmaster-0.1.0.0-InqCxdYO4rJ3zKRbGHj204-dbmaster"
+libdir     = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4/dbmaster-0.1.0.0-8yIWxbeg00yEy6stk9XCkp-dbmaster"
 dynlibdir  = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/lib/x86_64-osx-ghc-8.4.4"
 datadir    = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/share/x86_64-osx-ghc-8.4.4/dbmaster-0.1.0.0"
 libexecdir = "/Users/Vadim/Documents/fp/project/.stack-work/install/x86_64-osx/lts-12.26/8.4.4/libexec/x86_64-osx-ghc-8.4.4/dbmaster-0.1.0.0"

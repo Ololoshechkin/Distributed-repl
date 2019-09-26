@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-09-23 14:02:28.091545 UTC
+2019-09-26 01:14:09.932472 UTC
 
 interface main:Main 8044
-  interface hash: 99401eaeacaeb5657703546ed54c6c5b
-  ABI hash: 3cc166af49737b7d07cf83b9187551ec
-  export-list hash: 620972aa2fe8f866c66a3e59e8e4bfd2
+  interface hash: c740e317af157c94e632f57a92c83238
+  ABI hash: 13875d95e1b6205a2f094b8758c942ef
+  export-list hash: 1e4f57d295a5981c85be23b829ecbad5
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 747afdbeac4a713d03eba2b940a14dc5
   opt_hash: 14e536840aca4e889cad654e6f9b79c1
@@ -14,7 +14,7 @@ interface main:Main 8044
   used TH splices: False
   where
 exports:
-  Main.chooseNWorkers
+  Main.chooseKWorkers
   Main.main
   Main.totalTimeoutMicros
   Main.workersTimeoutMicros
@@ -33,11 +33,8 @@ package dependencies: StateVar-1.1.1.1 adjunctions-4.4
                       time-1.8.0.2 transformers-0.5.5.0 transformers-base-0.4.5.2
                       transformers-compat-0.6.2 unbounded-delays-0.1.1.0
                       unordered-containers-0.2.9.0 utils-0.1.0.0 vector-0.12.0.2
-orphans: time-1.8.0.2:Data.Time.Format.Parse
-         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
-         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
-         time-1.8.0.2:Data.Time.Calendar.Gregorian
-         network-2.6.3.6:Network.Socket reflection-2.1.4:Data.Reflection
+orphans: network-2.6.3.6:Network.Socket
+         reflection-2.1.4:Data.Reflection
          vector-0.12.0.2:Data.Vector.Unboxed
          vector-0.12.0.2:Data.Vector.Fusion.Bundle
          hashable-1.2.7.0:Data.Hashable.Generic text-1.2.3.1:Data.Text.Lazy
@@ -45,7 +42,10 @@ orphans: time-1.8.0.2:Data.Time.Format.Parse
          bytestring-0.10.8.2:Data.ByteString.Builder
          text-1.2.3.1:Data.Text.Show
          transformers-0.5.5.0:Control.Monad.Trans.Error
-         stm-2.4.5.1:Control.Monad.STM base-4.11.1.0:GHC.Float
+         stm-2.4.5.1:Control.Monad.STM time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian base-4.11.1.0:GHC.Float
          base-4.11.1.0:GHC.Base
 family instance modules: adjunctions-4.4:Data.Functor.Rep
                          base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
@@ -102,11 +102,14 @@ family instance modules: adjunctions-4.4:Data.Functor.Rep
 import  -/  base-4.11.1.0:Control.Concurrent ef40f102578b6e7296c2a2358b631ee7
 import  -/  base-4.11.1.0:Control.Concurrent.MVar ca4c584bd9db3afcc6677dea708f87d7
 import  -/  base-4.11.1.0:Control.Monad c5f960c67d822497578bffbd3e4c01cf
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
 import  -/  base-4.11.1.0:Data.Functor f522c3501272159820fd6f242510732f
 import  -/  base-4.11.1.0:Data.Traversable 7ad4edb9184ea1ae8e73f6b94f115c8c
 import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
 import  -/  base-4.11.1.0:GHC.Conc.Sync 0f06fc4d7792ea35160385e7175366ba
+import  -/  base-4.11.1.0:GHC.List 1e4357702d8d00cded0703bd293e50e8
 import  -/  base-4.11.1.0:GHC.MVar 5887537e57bb20af86721190334ddceb
+import  -/  base-4.11.1.0:GHC.Num 8e54b26dce4495382dc4b50cf36ab754
 import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
 import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
 import  -/  base-4.11.1.0:System.IO e02b6055b5362a3eac04f83991602a53
@@ -145,43 +148,94 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
+d45e372df7e51884f479e2a43568e31d
+  $wchooseKWorkers ::
+    GHC.Prim.MVar# GHC.Prim.RealWorld [Network.Transport.Connection]
+    -> GHC.Prim.Int#
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          [Network.Transport.Connection] #)
+  {- Arity: 3, Strictness: <S,U><S,1*U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.MVar#
+                            GHC.Prim.RealWorld [Network.Transport.Connection])
+                   (ww1 :: GHC.Prim.Int#)
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case GHC.Prim.readMVar#
+                        @ GHC.Prim.RealWorld
+                        @ [Network.Transport.Connection]
+                        ww
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 case Main.$wgenKFromNSet
+                        ww1
+                        (case GHC.List.$wlenAcc
+                                @ Network.Transport.Connection
+                                ipv1
+                                0# of ww2 { DEFAULT ->
+                         GHC.Types.I# ww2 })
+                        (GHC.Types.[] @ GHC.Types.Int)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 letrec {
+                   go :: [GHC.Types.Int]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                               [Network.Transport.Connection] #)
+                     {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [GHC.Types.Int])
+                       (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> (# eta, GHC.Types.[] @ Network.Transport.Connection #)
+                       : y ys
+                       -> case go ys eta of ds3 { (#,#) ipv4 ipv5 ->
+                          (# ipv4,
+                             GHC.Types.:
+                               @ Network.Transport.Connection
+                               (GHC.List.!! @ Network.Transport.Connection ipv1 y)
+                               ipv5 #) } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+d7a711c725fc8e4ed8146ba42b52fcd2
+  $wgenKFromNSet ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> [GHC.Types.Int]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [GHC.Types.Int] #)
+  {- Arity: 4, Strictness: <S,1*U><L,U(U)><L,U><S,U>, Inline: [0] -}
 1eaa83bcad8811f09bdb8c607c84d89b
   $wpoly_go13 ::
     GHC.Prim.Word#
     -> Data.Map.Internal.Map Network.Transport.ConnectionId a -> a
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-4e6a4cb8d23be6c08aaf14711ffefcda
-  chooseNWorkers ::
+86d390df583644326925a2dddb6eed38
+  chooseKWorkers ::
     NetworkUtils.ServerMaster
     -> GHC.Types.Int -> GHC.Types.IO [Network.Transport.Connection]
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(LS(S)L),1*U(A,1*U(U),A)><L,A><S,U>,
+  {- Arity: 3,
+     Strictness: <S(LS(S)L),1*U(A,1*U(U),A)><S(S),1*U(1*U)><S,U>,
      Unfolding: InlineRule (0, True, True)
-                Main.chooseNWorkers1
+                Main.chooseKWorkers1
                   `cast`
                 (<NetworkUtils.ServerMaster>_R
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (GHC.Types.N:IO[0] <[Network.Transport.Connection]>_R)) -}
-2eeddf20d7b17a9855eee97b179e7eb8
-  chooseNWorkers1 ::
+e80322a02b8a16ee53d8a25dc76f7b67
+  chooseKWorkers1 ::
     NetworkUtils.ServerMaster
     -> GHC.Types.Int
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           [Network.Transport.Connection] #)
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(LS(S)L),1*U(A,1*U(U),A)><L,A><S,U>,
+  {- Arity: 3,
+     Strictness: <S(LS(S)L),1*U(A,1*U(U),A)><S(S),1*U(1*U)><S,U>,
+     Inline: [0],
      Unfolding: InlineRule (3, True, False)
-                (\ (server :: NetworkUtils.ServerMaster)
-                   (n :: GHC.Types.Int)
-                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 case server of wild { NetworkUtils.ServerMaster x1 x2 x3 ->
-                 case x2 of wild1 { GHC.MVar.MVar mvar# ->
-                 GHC.Prim.readMVar#
-                   @ GHC.Prim.RealWorld
-                   @ [Network.Transport.Connection]
-                   mvar#
-                   eta } }) -}
+                (\ (w :: NetworkUtils.ServerMaster)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case w of ww { NetworkUtils.ServerMaster ww1 ww2 ww3 ->
+                 case ww2 of ww4 { GHC.MVar.MVar ww5 ->
+                 case w1 of ww6 { GHC.Types.I# ww7 ->
+                 Main.$wchooseKWorkers ww5 ww7 w2 } } }) -}
 fc0fc4874ac35d2bf58c2958c527f448
   main :: GHC.Types.IO ()
   {- Arity: 1,

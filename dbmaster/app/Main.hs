@@ -3,10 +3,9 @@
 
 module Main where
 
-import Network.Transport
-import Control.Concurrent
+import Network.Transport (Connection, send)
+import Control.Concurrent (forkIO, putMVar, readMVar, modifyMVar_, isEmptyMVar)
 import Data.Map ((!))
-import System.Random
 import qualified Data.ByteString.Lazy       as BS (fromStrict, toStrict)
 import qualified Data.Binary                as B (decode, encode)
 import Messages (DBMessage (..))
@@ -17,6 +16,7 @@ import System.Timeout (timeout)
 import Control.Monad (void, forM)
 import Control.Concurrent.STM.TVar (writeTVar, readTVarIO)
 import Control.Monad.STM (atomically)
+import System.Random (randomRIO)
 
 -- 1 sec
 workersTimeoutMicros :: Integer
@@ -40,7 +40,7 @@ main = runDefaultMaster $ \server curCid bytes -> do
       return ()
     PublishMessage key value repl -> do
       let msg = PublishMessage key value 1
-      workers <- chooseNWorkers server repl
+      workers <- chooseKWorkers server repl
       _ <- forM workers $ \worker -> void $ send worker [BS.toStrict $ B.encode msg]
       return ()
     LoadMessage key -> do
@@ -72,5 +72,17 @@ main = runDefaultMaster $ \server curCid bytes -> do
     _ -> putStrLn $ "Unexpected result: " ++ (show query)
 
 -- Note: chooeses N (or less) random workers to send data to
-chooseNWorkers :: ServerMaster -> Int -> IO [Connection]
-chooseNWorkers server n = readMVar $ view workersList server
+chooseKWorkers :: ServerMaster -> Int -> IO [Connection]
+chooseKWorkers server wokrersCnt = do
+  workers <- readMVar $ view workersList server
+  let n = length workers
+  indexes <- genKFromNSet wokrersCnt n []
+  mapM (\i -> return $ workers !! i) indexes
+  where
+    genKFromNSet k n curRes = if k == 0 then return curRes else do
+      i <- randomRIO (0, n)
+      if elem i curRes
+        then genKFromNSet k n curRes
+        else genKFromNSet (k - 1) n (i : curRes)
+
+
