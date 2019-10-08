@@ -16,6 +16,26 @@ extra-source-files:  README.md
 cabal-version:       >=1.10
 tested-with:         GHC == 8.6.5
 
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  ghc-options:         -Wall
+  build-depends:
+      base  >= 4.8 && < 5
+      , containers
+      , mtl
+      , utf8-string
+      , bytestring
+      , directory
+      , exceptions
+      , network
+      , network-transport
+      , network-transport-tcp
+      , binary
+      , utils
+      , sqlite-simple
+  default-language:    Haskell2010
+
 executable dbworker
   hs-source-dirs:      app
   main-is:             Main.hs
@@ -23,20 +43,12 @@ executable dbworker
   build-depends:
       base  >= 4.8 && < 5
       , containers
-      , mtl
-      , megaparsec
       , utf8-string
       , bytestring
-      , directory
-      , exceptions
-      , network-transport
-      , qtah-qt5
-      , hoppy-runtime >=0.5 && <0.6
       , network
       , network-transport
       , network-transport-tcp
       , binary
       , utils
-      , random
-      , unbounded-delays
+      , dbworker
   default-language:    Haskell2010
