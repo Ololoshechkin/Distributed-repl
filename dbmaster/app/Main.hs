@@ -58,7 +58,28 @@ main = runDefaultMaster $ \server curCid bytes -> do
         stillWaiting <- liftIO $ fmap not $ readTVarIO $ (view isWaiting server) ! curCid
         if stillWaiting
           then do
-            let err = LoadError $ "No data for the given key \"" ++ key ++ "\" available in the moment"
+            let err = LoadError $ "No data for the given key \"" ++ key ++ "\" available at the moment"
+            conn <- liftIO $ readMVar ((view connMap server) ! curCid)
+            _ <- liftIO $ send conn [BS.toStrict $ B.encode err]
+            return ()
+          else return ()
+      return ()
+    UploadMap _ _ -> do
+      workers <- liftIO $ chooseKWorkers server 3
+      _ <- forM workers $ \worker -> void $ liftIO $ send worker [BS.toStrict $ B.encode query]
+      return ()
+    DownloadMap cid -> do
+      _ <- fork $ void $ liftIO $ timeout totalTimeoutMicros $ do
+        workers <- readMVar $ view workersList server
+        let waitingMap = view isWaiting server
+        liftIO $ atomically $ writeTVar (waitingMap ! curCid) True
+        let workerMsg = DownloadMapForId curCid cid
+        _ <- forM workers $ \worker -> void $ liftIO $ send worker [BS.toStrict $ B.encode workerMsg]
+        _ <- liftIO $ delay workersTimeoutMicros
+        stillWaiting <- liftIO $ fmap not $ readTVarIO $ (view isWaiting server) ! curCid
+        if stillWaiting
+          then do
+            let err = LoadError $ "No map for the given client \"" ++ (show cid) ++ "\" available at the moment"
             conn <- liftIO $ readMVar ((view connMap server) ! curCid)
             _ <- liftIO $ send conn [BS.toStrict $ B.encode err]
             return ()
@@ -69,6 +90,14 @@ main = runDefaultMaster $ \server curCid bytes -> do
       let curWaiting = (waiting ! curCid)
       liftIO $ atomically $ writeTVar curWaiting False
       let res = LoadResult val
+      conn <- liftIO $ readMVar ((view connMap server) ! cid)
+      _ <- liftIO $ send conn [BS.toStrict $ B.encode res]
+      return ()
+    ResultMapForId cid cid2 m -> do
+      let waiting = view isWaiting server
+      let curWaiting = (waiting ! curCid)
+      liftIO $ atomically $ writeTVar curWaiting False
+      let res = ResultMap cid2 m
       conn <- liftIO $ readMVar ((view connMap server) ! cid)
       _ <- liftIO $ send conn [BS.toStrict $ B.encode res]
       return ()
