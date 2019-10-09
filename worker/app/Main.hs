@@ -48,20 +48,38 @@ workerServer masterConn masterEndpoint dbConn dbEndpoint = do
             let query = ((B.decode $ BS.fromStrict bytes) :: Message)
             case query of
               CompileWorkerRequest cid program -> do
-                result <- liftIO $ executeScript program $ DB { publish = publishImpl, load = loadImpl }
+                liftIO $ putStrLn $ "request : " ++ (show program)
+                result <- liftIO $ executeScript program cid $ DB { publish = publishImpl
+                                                                  , load = loadImpl
+                                                                  , downloadMap = downloadImpl
+                                                                  , uploadMap = uploadImpl }
+                liftIO $ putStrLn $ "result : " ++ (show result)
                 liftIO $ void $ send masterConn [BS.toStrict $ B.encode (CompileWorkerReply cid result)]
                 return ()
               _ -> do return ()
           go server
         _ -> return ()
-    publishImpl :: String -> String -> Int -> IO ()
+    publishImpl :: PublishCallback
     publishImpl key value repl = do
       let req = PublishMessage key value repl
       _ <- liftIO $ send dbConn [BS.toStrict $ B.encode req]
       return ()
-    loadImpl :: String -> IO DBMessage
+    loadImpl :: LoadCallback
     loadImpl key = do
       let req = LoadMessage key
+      _ <- liftIO $ send dbConn [BS.toStrict $ B.encode req]
+      event <- liftIO $ receive dbEndpoint
+      case event of
+        Received _ (bytes : _) -> return ((B.decode $ BS.fromStrict bytes) :: DBMessage)
+        _                      -> return $ LoadError $ show event
+    uploadImpl :: UploadMapCallback
+    uploadImpl cid vmap = do
+      let req = UploadMap cid vmap
+      _ <- liftIO $ send dbConn [BS.toStrict $ B.encode req]
+      return ()
+    downloadImpl :: DownloadMapCallback
+    downloadImpl cid = do
+      let req = DownloadMap cid
       _ <- liftIO $ send dbConn [BS.toStrict $ B.encode req]
       event <- liftIO $ receive dbEndpoint
       case event of

@@ -3,7 +3,7 @@
 
 module Main where
 
-import Network.Transport (ConnectionId, send)
+import Network.Transport (send)
 import Control.Concurrent (putMVar, readMVar, modifyMVar_, isEmptyMVar)
 import Control.Monad.IO.Class (liftIO)
 import Control.Monad.Par.IO (ParIO)
@@ -11,7 +11,7 @@ import Data.Map ((!))
 import System.Random (randomIO)
 import qualified Data.ByteString.Lazy       as BS (fromStrict, toStrict)
 import qualified Data.Binary                as B (decode, encode)
-import Messages (Message (..), Program)
+import Messages (Message (..))
 import Control.Lens hiding (element)
 import Data.Bifunctor (second)
 import NetworkUtils
@@ -34,7 +34,7 @@ main = runDefaultMaster $ \server curCid bytes -> do
         then liftIO $ putMVar (view workersList server) [conn]
         else liftIO $ modifyMVar_ (view workersList server) $ return . (conn : )
       return ()
-    CompileClientRequest program -> chooseWorkerLoop server program curCid 0
+    CompileClientRequest program -> chooseWorkerLoop server (CompileWorkerRequest curCid program) 0
     CompileWorkerReply cid result -> do
       liftIO $ putStrLn $ "CompileWorkerReply"
       conn <- liftIO $ readMVar (cs ! cid)
@@ -51,8 +51,8 @@ maxAttempts = 100
 -- chose random worker until one of the following is true
 -- * worker successfully receives the message
 -- * maxAttempts expired
-chooseWorkerLoop :: ServerMaster -> Program -> ConnectionId -> Int -> ParIO ()
-chooseWorkerLoop server program curCid attempts = do
+chooseWorkerLoop :: ServerMaster -> Message -> Int -> ParIO ()
+chooseWorkerLoop server msg attempts = do
   if attempts == maxAttempts
     then return ()
     else do
@@ -60,12 +60,11 @@ chooseWorkerLoop server program curCid attempts = do
       let n = length workers
       i <- liftIO $ fmap (`mod` n) (randomIO :: IO Int)
       let workerConn = workers !! i
-      let workerRequest = CompileWorkerRequest curCid program
-      res <- liftIO $ send workerConn [BS.toStrict $ B.encode workerRequest]
+      res <- liftIO $ send workerConn [BS.toStrict $ B.encode msg]
       case res of
         Left _ -> do
           _ <- liftIO $ modifyMVar_ (view workersList server) $ return . (deleteIth i)
-          chooseWorkerLoop server program curCid (attempts + 1)
+          chooseWorkerLoop server msg (attempts + 1)
         _ -> return ()
 
 deleteIth :: Int -> [a] -> [a]

@@ -3,10 +3,7 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses      #-}
 {-# LANGUAGE OverloadedStrings          #-}
-module Lib
-    ( 
-        parseScript
-    ) where
+module Lib where
 
 import           Data.Void                  (Void)
 import           Text.Megaparsec            -- TODO: (<|>) is not working with manual imports
@@ -206,8 +203,20 @@ parseReturnStatement = try $ do
   expr <- parseExpression
   return $ ReturnStatement expr
 
+parseReplStatementImpl :: Parser ReplStatement
+parseReplStatementImpl = (try $ fmap EvalExprStatement parseOnlyExpression) <|> (try $ fmap NormalStatement parseStatement) where
+  parseOnlyExpression = do
+    res <- parseExpression
+    _   <- eof
+    return res
+
 parseScript :: String -> Either String Program
 parseScript input = case parse parseProgram "" input of
-        Left ex -> Left (show ex)
-        Right prog -> Right prog
+  Left ex -> Left (show ex)
+  Right prog -> Right prog
+
+parseReplStatement :: String -> Either String Program
+parseReplStatement input = case parse parseReplStatementImpl "" input of
+  Left ex -> Left (show ex)
+  Right stat -> Right $ ReplProgramSegment stat
 

@@ -39,7 +39,7 @@ library
 executable client
   hs-source-dirs:      app
   main-is:             Main.hs
-  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N -XOverloadedStrings -dynamic
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N -XOverloadedStrings -dynamic -O0 -fignore-interface-pragmas
   build-depends:
       base  >= 4.8 && < 5
       , containers

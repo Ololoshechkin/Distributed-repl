@@ -3,6 +3,7 @@ module Messages where
 import qualified Data.Binary                as B (Binary, Get, put, get)
 import           Data.Word
 import           Network.Transport (ConnectionId)
+import qualified Data.Map.Strict            as Map (Map)
 
 data DBMessage = PublishMessage String String Int 
                | LoadMessage String 
@@ -11,6 +12,11 @@ data DBMessage = PublishMessage String String Int
                | LoadResultForID ConnectionId String
                | LoadError String
                | LoadErrorForID ConnectionId String
+               | UploadMap ConnectionId VariableMap
+               | DownloadMap ConnectionId
+               | DownloadMapForId ConnectionId ConnectionId
+               | ResultMap ConnectionId VariableMap
+               | ResultMapForId ConnectionId ConnectionId VariableMap
                | RegisterDBWorker deriving (Show)
 
 instance B.Binary DBMessage where
@@ -40,7 +46,27 @@ instance B.Binary DBMessage where
         B.put (6 :: Word8)
         B.put i
         B.put e
-    put RegisterDBWorker = B.put (7 :: Word8)
+    put (UploadMap cid m) = do
+        B.put (7 :: Word8)
+        B.put cid
+        B.put m
+    put (DownloadMap cid) = do
+        B.put (8 :: Word8)
+        B.put cid
+    put (ResultMap cid m) = do
+        B.put (9 :: Word8)
+        B.put cid
+        B.put m
+    put (DownloadMapForId cid cid2) = do
+        B.put (10 :: Word8)
+        B.put cid
+        B.put cid2
+    put (ResultMapForId cid cid2 m) = do
+        B.put (11 :: Word8)
+        B.put cid
+        B.put cid2
+        B.put m
+    put RegisterDBWorker = B.put (12 :: Word8)
     get = do
         t <- B.get :: B.Get Word8
         case t of
@@ -70,6 +96,26 @@ instance B.Binary DBMessage where
                 i <- B.get
                 e <- B.get
                 return $ LoadErrorForID i e
+            7 -> do
+                cid <- B.get
+                m <- B.get
+                return $ UploadMap cid m
+            8 -> do
+                cid <- B.get
+                return $ DownloadMap cid
+            9 -> do
+                cid <- B.get
+                m   <- B.get
+                return $ ResultMap cid m
+            10 -> do
+                cid <- B.get
+                cid2 <- B.get
+                return $ DownloadMapForId cid cid2
+            11 -> do
+                cid <- B.get
+                cid2 <- B.get
+                m   <- B.get
+                return $ ResultMapForId cid cid2 m
             _ -> return RegisterDBWorker
 
 data Message = CompileClientRequest Program
@@ -106,7 +152,7 @@ instance B.Binary Message where
                 program <- B.get
                 return $ CompileWorkerRequest cid program
             2 -> do
-                cid   <- B.get
+                cid    <- B.get
                 result <- B.get
                 return $ CompileWorkerReply cid result
             3 -> do
@@ -114,6 +160,38 @@ instance B.Binary Message where
                 return $ CompileClientReply result
             _ -> do
                 return RegisterWorker
+
+type VariableMap = Map.Map String Value
+
+data Value = IntValue Int | StringValue String | BoolValue Bool | LambdaValue LambdaDef deriving (Show)
+instance B.Binary Value where
+    put (IntValue i) = do
+        B.put (0 :: Word8)
+        B.put i
+    put (StringValue s) = do
+        B.put (1 :: Word8)
+        B.put s
+    put (BoolValue b) = do
+        B.put (2 :: Word8)
+        B.put b
+    put (LambdaValue l) = do
+        B.put (3 :: Word8)
+        B.put l
+    get = do
+        t <- B.get :: B.Get Word8
+        case t of
+            0 -> do
+                i <- B.get
+                return $ IntValue i
+            1 -> do
+                s <- B.get
+                return $ StringValue s
+            2 -> do
+                b <- B.get
+                return $ BoolValue b
+            _ -> do
+                l <- B.get
+                return $ LambdaValue l
 
 data ProgramResult = Success String | CompilationError String deriving (Show)
 instance B.Binary ProgramResult where
@@ -133,16 +211,43 @@ instance B.Binary ProgramResult where
                 descr <- B.get
                 return $ CompilationError descr
 
-data Program = Program [Statement] ReturnStatement deriving (Show)
-
+data Program = Program [Statement] ReturnStatement | ReplProgramSegment ReplStatement deriving (Show)
 instance B.Binary Program where
     put (Program statements returnStatement) = do
+        B.put (0 :: Word8)
         B.put statements
         B.put returnStatement
+    put (ReplProgramSegment st) = do
+        B.put (1 :: Word8)
+        B.put st
     get = do
-        statements <- B.get
-        returnStatement <- B.get
-        return $ Program statements returnStatement
+        t <- B.get :: B.Get Word8
+        case t of
+            0 -> do
+                statements <- B.get
+                returnStatement <- B.get
+                return $ Program statements returnStatement
+            _ -> do
+                st <- B.get
+                return $ ReplProgramSegment st
+
+data ReplStatement = NormalStatement Statement | EvalExprStatement Expression deriving (Show)
+instance B.Binary ReplStatement where
+    put (NormalStatement st) = do
+        B.put (0 :: Word8)
+        B.put st
+    put (EvalExprStatement ex) = do
+        B.put (1 :: Word8)
+        B.put ex
+    get = do
+        t <- B.get :: B.Get Word8
+        case t of
+            0 -> do
+                st <- B.get
+                return $ NormalStatement st
+            _ -> do
+                ex <- B.get
+                return $ EvalExprStatement ex
 
 data Statement = AssignmentStatement Assignment
                | LoopStatement Loop

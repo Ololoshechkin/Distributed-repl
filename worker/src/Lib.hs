@@ -10,8 +10,11 @@ module Lib
         , DB (..)
         , PublishCallback
         , LoadCallback
+        , UploadMapCallback
+        , DownloadMapCallback
     ) where
 
+import Network.Transport (ConnectionId)
 import           Control.Monad.Reader (MonadReader, MonadIO, runReaderT, ask, ReaderT, liftIO)
 import qualified Data.Map.Strict            as Map
 import           Data.IORef                 (IORef, modifyIORef, newIORef, readIORef)
@@ -19,9 +22,6 @@ import           Messages
 import           Control.Monad.Catch
 import           Text.Read                  (readMaybe)
 
-data Value = IntValue Int | StringValue String | BoolValue Bool | LambdaValue LambdaDef deriving (Show)
-
-type VariableMap = Map.Map String Value
 
 data CompilationException = CompilationException String deriving (Show)
 
@@ -40,14 +40,18 @@ newtype ScriptContext t = ScriptContext {runStmt :: ReaderT (IORef VariableMap) 
 
 type PublishCallback = (String -> String -> Int -> IO ())
 type LoadCallback = (String -> IO DBMessage)
+type DownloadMapCallback = (ConnectionId -> IO DBMessage)
+type UploadMapCallback = (ConnectionId -> VariableMap -> IO ())
 
-data DB = DB { publish :: PublishCallback
-             , load    :: LoadCallback}
+data DB = DB { publish     :: PublishCallback
+             , load        :: LoadCallback
+             , downloadMap :: DownloadMapCallback
+             , uploadMap   :: UploadMapCallback}
 
 type PredefinedFunction = [Value] -> Either CompilationException Value
 
-executeScript :: Program -> DB -> IO ProgramResult
-executeScript prog db = execScript Map.empty prog
+executeScript :: Program -> ConnectionId -> DB -> IO ProgramResult
+executeScript prog cid db = execScript prog
   where
     toString :: PredefinedFunction
     toString [] = Right $ StringValue ""
@@ -96,8 +100,14 @@ executeScript prog db = execScript Map.empty prog
         _ -> Left $ CompilationException $ "Function substring expectes string as first argument but " ++ (show sv) ++  " were provided"
       _ -> Left $ CompilationException $ "Function substring expectes exactly 3 arguments but " ++ (show $ length args) ++  " were provided"
 
-    execScript :: VariableMap -> Program -> IO ProgramResult
-    execScript initMap = (executeScriptWithContext initMap) . executeProgramWithErrors
+    execScript :: Program -> IO ProgramResult
+    execScript (ReplProgramSegment st) = do
+      dbResp <- liftIO $ (downloadMap db) cid
+      case dbResp of 
+        ResultMap _ initMap -> (executeScriptWithContext initMap) $ executeProgramWithErrors (ReplProgramSegment st)
+        LoadError e -> return $ CompilationError $ "Failed to access database: " ++ e
+        _           -> return $ CompilationError $ "Unexpected response from DB: " ++ (show dbResp)
+    execScript p = (executeScriptWithContext Map.empty) $ executeProgramWithErrors p
 
     executeScriptWithContext :: VariableMap -> ScriptContext t -> IO t
     executeScriptWithContext initMap ctx = do
@@ -114,9 +124,28 @@ executeScript prog db = execScript Map.empty prog
     executeProgram (Program statements retStatement) = do
       _ <- executeStatements statements
       evaluateReturnStatement retStatement
+    executeProgram (ReplProgramSegment st) = do
+      res     <- executeReplStatement st
+      mapRef  <- ask
+      map_    <- liftIO $ readIORef mapRef
+      _       <- liftIO $ (uploadMap db) cid map_
+      return res
 
     evaluateReturnStatement :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => ReturnStatement -> t Value
     evaluateReturnStatement (ReturnStatement expr) = evaluateExpr expr
+
+    executeReplStatement :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => ReplStatement -> t Value
+    executeReplStatement (NormalStatement st) = do
+      _ <- executeStatement st
+      case st of 
+        AssignmentStatement (Assignment name _) -> do
+          mapRef  <- ask
+          map_    <- liftIO $ readIORef mapRef
+          case (Map.lookup name map_) of
+            Just value -> return value
+            Nothing    -> throwM $ CompilationException $ "Variable \"" ++ name ++ "\" occasionally failed to be assigned"
+        _ -> return $ StringValue ""
+    executeReplStatement (EvalExprStatement expr) = evaluateExpr expr
 
     executeStatements :: (MonadReader (IORef VariableMap) t, MonadIO t, MonadThrow t) => [Statement] -> t ()
     executeStatements [] = return ()
@@ -128,7 +157,7 @@ executeScript prog db = execScript Map.empty prog
     executeStatement s  = case s of
       AssignmentStatement (Assignment var expr) -> do
         value <- evaluateExpr expr
-        map_ <- ask
+        map_  <- ask
         liftIO $ modifyIORef map_ (Map.insert var value)
       LoopStatement loop -> executeLoop loop
       InvocationStatement inv -> do

@@ -5,8 +5,8 @@ module Main where
 import Network.Transport
 import qualified Data.ByteString.Lazy       as BS (toStrict, fromStrict)
 import qualified Data.Binary                as B (encode, decode)
-import Lib (parseScript)
-import Messages ( Message( CompileClientRequest, CompileClientReply ), ProgramResult (..) )
+import Data.List (intercalate)
+import Messages ( Message( CompileClientRequest, CompileClientReply), ProgramResult (..) )
 import NetworkUtils (connectToServer)
 import Foreign.Hoppy.Runtime (withScopedPtr)
 import qualified Graphics.UI.Qtah.Core.QCoreApplication as QCoreApplication
@@ -28,6 +28,7 @@ import Graphics.UI.Qtah.Signal (connect_)
 import System.Environment (getArgs)
 import System.Timeout (timeout)
 import Control.Monad (unless)
+import Lib
 
 main :: IO ()
 main = withScopedPtr (getArgs >>= QApplication.new) $ \_ -> do
@@ -37,7 +38,7 @@ main = withScopedPtr (getArgs >>= QApplication.new) $ \_ -> do
     Left errMsg -> showMessageWindow $ "Couldn't connect to server:\n" ++ errMsg
     Right (conn, endpoint) -> do
       _ <- receive endpoint
-      uiWindow <- newChooserWindow conn endpoint
+      uiWindow <- newMainWindow conn endpoint serverAddr
       QWidget.show uiWindow
   QCoreApplication.exec
 
@@ -101,8 +102,8 @@ loadFromFile window = do
 serverTimeoutMicros :: Int
 serverTimeoutMicros = 1500000
 
-newChooserWindow :: Connection -> EndPoint -> IO QWidget.QWidget
-newChooserWindow servConn servEndpoint = do
+newMainWindow :: Connection -> EndPoint -> String -> IO QWidget.QWidget
+newMainWindow servConn servEndpoint serverAddr = do
   -- Create and initialize widgets.
 
   window <- QWidget.new
@@ -142,6 +143,7 @@ newChooserWindow servConn servEndpoint = do
                     putStrLn $ show event
                     return ()
                 _ -> showMessageWindow "Failed to send message to server."
+  replButton <- button "&Repl Mode" $ \_ -> showReplWindow serverAddr "0"
   quitButton <- button "&Quit" $ \_ -> QCoreApplication.quit
   saveButtin <- button "&Save" $ \_ -> do
     sourceCode <- QTextEdit.toPlainText codeField
@@ -155,6 +157,7 @@ newChooserWindow servConn servEndpoint = do
   QWidget.setLayout rightBox rightBoxLayout
   QBoxLayout.addStretch rightBoxLayout
   QBoxLayout.addWidget rightBoxLayout compileButton
+  QBoxLayout.addWidget rightBoxLayout replButton
   QBoxLayout.addWidget rightBoxLayout saveButtin
   QBoxLayout.addWidget rightBoxLayout loadButtin
   QBoxLayout.addWidget rightBoxLayout quitButton
@@ -171,10 +174,82 @@ newChooserWindow servConn servEndpoint = do
   QBoxLayout.addWidgetWithStretch layout horSpliter 1
 
   _ <- onEvent window $ \(_ :: QCloseEvent.QCloseEvent) -> do
+    close servConn
     QCoreApplication.quit
     return False
 
   return window
 
+showReplWindow :: String -> String -> IO ()
+showReplWindow serverAddr port = do
+  connOr <- connectToServer serverAddr port
+  case connOr of 
+    Left errMsg -> showMessageWindow $ "Couldn't connect to server:\n" ++ errMsg
+    Right (conn, endpoint) -> do
+      _ <- receive endpoint
+      uiWindow <- newReplWindow conn endpoint
+      QWidget.show uiWindow
 
+newReplWindow :: Connection -> EndPoint -> IO QWidget.QWidget
+newReplWindow servConn servEndpoint = do
+  window <- QWidget.new
+  QWidget.setWindowTitle window ("Distributed Repl" :: String)
+  QWidget.resizeRaw window 1000 500
 
+  code   <- label "Repl Mode:\n"
+  codeField <- textField
+  logs      <- label ""
+
+  box <- QWidget.new
+  boxLayout <- QVBoxLayout.new
+  QWidget.setLayout box boxLayout
+  QBoxLayout.addStretch boxLayout
+  QBoxLayout.addWidget boxLayout code
+  QBoxLayout.addWidget boxLayout codeField
+  QBoxLayout.addWidget boxLayout logs
+
+  replButon <- button "&Interpret" $ \_ -> do
+    newCodeFragment <- QTextEdit.toPlainText codeField
+    QTextEdit.clear codeField
+    case parseReplStatement newCodeFragment of
+        Left errMessage  -> showMessageWindow $ "Failed to parse the script:\n" ++ errMessage
+        Right codeSegment -> do
+            let request = CompileClientRequest codeSegment
+            sendRes <- send servConn ((BS.toStrict $ B.encode request) : [])
+            case sendRes of 
+                Right _ -> do
+                    event <- timeout serverTimeoutMicros $ receive servEndpoint
+                    case event of 
+                        Just (Received _ (bytes : [])) -> do
+                          let reply = (B.decode $ BS.fromStrict bytes) :: Message
+                          case reply of
+                            CompileClientReply programResult -> do
+                              oldCode <- QLabel.text code
+                              let shrinkedCode = intercalate "\n" $ reverse $ take 12 $ reverse $ drop 1 $ lines oldCode
+                              let newText = "Repl Mode:\n" ++ shrinkedCode ++ "\n" ++ newCodeFragment ++ "\n"
+                              QLabel.setText code newText
+                              case programResult of
+                                Success resString            -> QLabel.setText logs $ take 50 resString
+                                CompilationError description -> QLabel.setText logs $ take 50 $ "Error: " ++ description
+                            _                                         -> showMessageWindow "Unexpected reply from server"
+                        Just (ConnectionClosed _) -> showMessageWindow "Server closed connection, sorry :("
+                        Just _                    -> showMessageWindow "Try again! Something went wrong"
+                        Nothing                   -> showMessageWindow "Server didn't respond in 1.5 sec, try again later\nor send script that can be executed faster"
+                    putStrLn $ show event
+                    return ()
+                _ -> showMessageWindow "Failed to send message to server."
+
+  QBoxLayout.addWidget boxLayout replButon
+
+  horSpliter <- horisontal 200 300 $ \panel -> do
+    QSplitter.addWidget panel box
+    return ()
+
+  layout <- QVBoxLayout.newWithParent window
+  QBoxLayout.addWidgetWithStretch layout horSpliter 1
+
+  _ <- onEvent window $ \(_ :: QCloseEvent.QCloseEvent) -> do
+    close servConn
+    return False
+
+  return window
