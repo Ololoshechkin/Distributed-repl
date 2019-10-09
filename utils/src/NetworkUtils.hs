@@ -4,15 +4,19 @@
 module NetworkUtils where
 
 import Data.ByteString.Char8 (pack)
-import Data.Either
-import System.Environment
-import Network.Transport
+import Data.Either (Either)
+import System.Environment (getArgs)
+import Network.Transport (ConnectionId, Connection, EndPoint, Reliability(..), EndPointAddress(..), Event(..), close, defaultConnectHints, newEndPoint, connect, receive, address)
 import Network.Transport.TCP (createTransport, defaultTCPParameters)
 import Network.Socket (withSocketsDo)
 import qualified Data.ByteString            as B (ByteString)
 import qualified Data.ByteString.Lazy       as BS (fromStrict, toStrict)
+import Control.Concurrent (MVar, putMVar, readMVar, newEmptyMVar)
 import Control.Lens hiding (element)
-import Control.Concurrent
+import Control.Monad.IO.Class (liftIO)
+import Control.Monad.Par (IVar(..))
+import Control.Monad.Par.Class (fork, get, put, new)
+import Control.Monad.Par.IO (ParIO(..), runParIO)
 import qualified Data.Map                   as Map
 import Data.Map ((!))
 import Control.Concurrent.STM.TVar (TVar, newTVarIO)
@@ -36,49 +40,50 @@ connectToServer serverAddr port = do
     Left err   -> return $ Left $ show err
     Right conn -> return $ Right $ (conn, endpoint)
 
-type MasterRequestHandler = ServerMaster -> ConnectionId -> B.ByteString -> IO ()
+type MasterRequestHandler = ServerMaster -> ConnectionId -> B.ByteString -> ParIO ()
 
 runDefaultMaster :: MasterRequestHandler -> IO ()
-runDefaultMaster requestHandler = withSocketsDo $ do
-  [host, port]    <- getArgs
-  serverDone      <- newEmptyMVar
-  Right transport <- createTransport host port (const (host, port)) defaultTCPParameters
-  Right endpoint  <- newEndPoint transport
-  _ <- forkIO $ runMasterImpl endpoint serverDone requestHandler
-  putStrLn $ "Master started at " ++ show (address endpoint)
-  readMVar serverDone >>= print where
-    runMasterImpl :: EndPoint -> MVar () -> MasterRequestHandler -> IO ()
+runDefaultMaster requestHandler = withSocketsDo $ runParIO $ do
+  [host, port]    <- liftIO $ getArgs
+  serverDone      <- new
+  Right transport <- liftIO $ createTransport host port (const (host, port)) defaultTCPParameters
+  Right endpoint  <- liftIO $ newEndPoint transport
+  _ <- fork $ runMasterImpl endpoint serverDone requestHandler
+  liftIO $ putStrLn $ "Master started at " ++ show (address endpoint)
+  get serverDone
+  where
+    runMasterImpl :: EndPoint -> IVar () -> MasterRequestHandler -> ParIO ()
     runMasterImpl endpoint serverDone requestHandler = do
-      workers <- newEmptyMVar
+      workers <- liftIO $ newEmptyMVar
       go $ ServerMaster Map.empty workers Map.empty
       where
-        go :: ServerMaster -> IO ()
+        go :: ServerMaster -> ParIO ()
         go server = do
-          event <- receive endpoint
+          event <- liftIO $ receive endpoint
           case event of
             ConnectionOpened cid rel addr -> do
-              putStrLn "ConnectionOpened"
-              connMVar <- newEmptyMVar
-              _ <- forkIO $ do
-                Right conn <- connect endpoint addr rel defaultConnectHints
-                putMVar connMVar conn 
-              waitingTVar <- newTVarIO False
+              liftIO $ putStrLn "ConnectionOpened"
+              connMVar <- liftIO $ newEmptyMVar
+              _ <- fork $ do
+                Right conn <- liftIO $ connect endpoint addr rel defaultConnectHints
+                liftIO $ putMVar connMVar conn 
+              waitingTVar <- liftIO $ newTVarIO False
               go $ over isWaiting (Map.insert cid waitingTVar) $ over connMap (Map.insert cid connMVar) server
             Received curCid (bytes : []) -> do
-              putStrLn $ "Received : " ++ (show bytes)
-              _ <- forkIO $ requestHandler server curCid bytes
+              liftIO $ putStrLn $ "Received : " ++ (show bytes)
+              _ <- fork $ requestHandler server curCid bytes
               go server
             ConnectionClosed cid -> do
-              putStrLn "ConnectionClosed"
-              _ <- forkIO $ do
+              liftIO $ putStrLn "ConnectionClosed"
+              _ <- fork $ do
                 let cs = view connMap server
-                conn <- readMVar (cs ! cid)
-                close conn 
+                conn <- liftIO $ readMVar (cs ! cid)
+                liftIO $ close conn 
               go $ over connMap (Map.delete cid) server
             EndPointClosed -> do
-              putStrLn "EndPointClosed"
-              putStrLn "Master Server server exiting"
-              putMVar serverDone ()
+              liftIO $ putStrLn "EndPointClosed"
+              liftIO $ putStrLn "Master Server server exiting"
+              put serverDone ()
             _ -> do
-              putStrLn $ "unknown event : " ++ (show event)
+              liftIO $ putStrLn $ "unknown event : " ++ (show event)
               go server

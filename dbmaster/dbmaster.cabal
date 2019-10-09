@@ -41,5 +41,7 @@ executable dbmaster
       , unbounded-delays
       , lens
       , stm
-      , MonadRandom
+      , random-shuffle
+      , abstract-par
+      , monad-par
   default-language:    Haskell2010

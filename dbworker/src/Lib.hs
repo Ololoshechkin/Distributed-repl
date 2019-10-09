@@ -1,5 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE BangPatterns     #-}
 
 module Lib where
 
@@ -10,6 +11,7 @@ import qualified Database.SQLite.Simple       as SQL (Connection(..), Only(..), 
 import Messages (DBMessage (..))
 import NetworkUtils (connectToServer)
 import System.IO (IOMode (..), openFile, hClose, hPutStr, hIsEOF, hGetLine)
+import System.EasyFile (doesFileExist)
 
 
 tryConnectToServer :: String -> String -> (Connection -> EndPoint -> IO ()) -> IO ()
@@ -34,37 +36,46 @@ instance DBWorker FileSystemDBWorker where
     hPutStr h value
     hClose h
   load _ key cid = do
-    h <- openFile key ReadMode
-    eof <- hIsEOF h
-    if eof
+    exists <- doesFileExist key
+    let err = LoadErrorForID cid $ "No key \"" ++ (show key) ++ "\" found"
+    if exists
       then do
-        let err = LoadErrorForID cid $ "No key \"" ++ (show key) ++ "\" found"
-        hClose h
-        return err
-      else do
-        val <- hGetLine h
-        let res = LoadResultForID cid val
-        hClose h
-        return res
+        h <- openFile key ReadMode
+        eof <- hIsEOF h
+        if eof
+          then do
+            hClose h
+            return err
+          else do
+            val <- hGetLine h
+            let res = LoadResultForID cid val
+            hClose h
+            return res
+      else return err
 
 data SQLiteDBWorker = SQLiteDBWorker { connection :: SQL.Connection }
 instance DBWorker SQLiteDBWorker where
   publish worker key value = do
+    !_ <- putStrLn "publish"
     let conn = connection worker
-    let insert = "INSERT INTO kvmaptable (key, value) VALUES (?,?)"
-    let update = "UPDATE kvmaptable SET val = ? WHERE key = ?;"
+    let insert = "INSERT or REPLACE INTO kvmaptable (key, value) VALUES (?,?)"
+    !_ <- putStrLn "insert"
     _ <- SQL.withTransaction conn $ do
       SQL.execute conn insert (key, value)
-      SQL.execute conn update (key, value)
       return ()
+    !_ <- putStrLn "inserted"
     return ()
   load worker key cid = do
     let conn         = connection worker
-    let selectQuery  = "SELECT * from kvmaptable where key = ?"
+    !_ <- putStrLn "select"
+    let selectQuery  = "SELECT value from kvmaptable where key = ?"
     let getAllForKey = (SQL.queryWith SQL.field conn selectQuery (SQL.Only key)) :: IO [String]
     let err          = LoadErrorForID cid $ "No key \"" ++ (show key) ++ "\" found"
     let makeReply    = fmap (\arr -> if (null arr) then err else LoadResultForID cid (head arr)) getAllForKey
-    SQL.withTransaction conn makeReply
+    !_ <- putStrLn "make reply"
+    res <- SQL.withTransaction conn makeReply
+    !_ <- putStrLn $ "res got" ++ (show res)
+    return res
 
 makeFSDBWorker :: IO FileSystemDBWorker
 makeFSDBWorker = return FileSystemDBWorker
@@ -89,9 +100,11 @@ workerServer dbserver masterConn masterEndpoint = do
           let query = ((B.decode $ BS.fromStrict bytes) :: DBMessage)
           case query of
             PublishMessage key value _ -> do
+              !_ <- putStrLn "(publish server) k v"
               (publish server) key value
               go server
             LoadMessageWithID cid key -> do
+              !_ <- putStrLn "(load server) k c"
               reply <- (load server) key cid
               _ <- send masterConn [BS.toStrict $ B.encode reply]
               go server

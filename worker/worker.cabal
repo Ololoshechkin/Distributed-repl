@@ -58,6 +58,8 @@ executable worker
       , binary
       , utils
       , worker
+      , abstract-par
+      , monad-par
   default-language:    Haskell2010
 
 test-suite worker-test

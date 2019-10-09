@@ -11,7 +11,7 @@ main = withSocketsDo $ do
   [serverAddr, port, workerType] <- getArgs
   tryConnectToServer serverAddr port $ \masterConn masterEndpoint -> do
     case workerType of 
-      "-sql" -> do
+      "sql" -> do
         dbworker <- makeSQLDBWorker
         workerServer dbworker masterConn masterEndpoint
       _      -> do

@@ -1,0 +1,550 @@
+
+==================== FINAL INTERFACE ====================
+2019-10-09 09:19:08.897899 UTC
+
+interface utils-0.1.0.0-ruQcw8wBHGC0OCiXN6O03:NetworkUtils 8044
+  interface hash: b58cabd20e4b3107c6167f2dbcede7b6
+  ABI hash: 3821ce2108e1c88fa63c76058138d588
+  export-list hash: 67df0ccc214092ce685a6b7fc661282a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 65b3af0017b0c080b33fe1c2bfb31876
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: True
+  where
+exports:
+  NetworkUtils.connMap
+  NetworkUtils.connectToServer
+  NetworkUtils.isWaiting
+  NetworkUtils.runDefaultMaster
+  NetworkUtils.workersList
+  NetworkUtils.MasterRequestHandler
+  NetworkUtils.ServerMaster{NetworkUtils.ServerMaster _connMap _isWaiting _workersList}
+module dependencies:
+package dependencies: StateVar-1.1.1.1 abstract-par-0.3.3
+                      adjunctions-4.4 array-0.5.2.0 base-4.11.1.0 base-orphans-0.7
+                      bifunctors-5.5.3 binary-0.8.5.1 bytestring-0.10.8.2
+                      call-stack-0.1.0 comonad-5.0.4 containers-0.5.11.0
+                      contravariant-1.4.1 data-accessor-0.2.2.8 deepseq-1.4.3.0
+                      distributive-0.5.3 exceptions-0.10.0 free-5.0.2 ghc-boot-th-8.4.4
+                      ghc-prim-0.5.2.0 hashable-1.2.7.0 integer-gmp-1.0.2.0
+                      kan-extensions-5.2 lens-4.16.1 monad-par-0.3.4.8
+                      monad-par-extras-0.3.3 mtl-2.2.2 network-2.6.3.6
+                      network-transport-0.5.2 network-transport-tcp-0.6.0 pretty-1.1.3.6
+                      primitive-0.6.3.0 profunctors-5.2.2 reflection-2.1.4
+                      semigroupoids-5.2.2 stm-2.4.5.1 tagged-0.8.5
+                      template-haskell-2.13.0.0 text-1.2.3.1 th-abstraction-0.2.10.0
+                      transformers-0.5.5.0 transformers-base-0.4.5.2
+                      transformers-compat-0.6.2 unordered-containers-0.2.9.0
+                      vector-0.12.0.2
+orphans: network-2.6.3.6:Network.Socket
+         reflection-2.1.4:Data.Reflection
+         vector-0.12.0.2:Data.Vector.Unboxed
+         vector-0.12.0.2:Data.Vector.Fusion.Bundle
+         hashable-1.2.7.0:Data.Hashable.Generic text-1.2.3.1:Data.Text.Lazy
+         text-1.2.3.1:Data.Text binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         stm-2.4.5.1:Control.Monad.STM
+         monad-par-0.3.4.8:Control.Monad.Par.Scheds.Trace
+         base-4.11.1.0:GHC.Float base-4.11.1.0:GHC.Base
+family instance modules: adjunctions-4.4:Data.Functor.Rep
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         bifunctors-5.5.3:Data.Bifunctor.Biff
+                         bifunctors-5.5.3:Data.Bifunctor.Clown
+                         bifunctors-5.5.3:Data.Bifunctor.Fix
+                         bifunctors-5.5.3:Data.Bifunctor.Flip
+                         bifunctors-5.5.3:Data.Bifunctor.Join
+                         bifunctors-5.5.3:Data.Bifunctor.Joker
+                         bifunctors-5.5.3:Data.Bifunctor.Product
+                         bifunctors-5.5.3:Data.Bifunctor.Sum
+                         bifunctors-5.5.3:Data.Bifunctor.Tannen
+                         bifunctors-5.5.3:Data.Bifunctor.Wrapped
+                         containers-0.5.11.0:Data.Graph
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         free-5.0.2:Control.Comonad.Cofree
+                         free-5.0.2:Control.Comonad.Trans.Cofree
+                         free-5.0.2:Control.Monad.Free free-5.0.2:Control.Monad.Trans.Free
+                         ghc-boot-th-8.4.4:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.4:GHC.LanguageExtensions.Type
+                         kan-extensions-5.2:Data.Functor.Day
+                         kan-extensions-5.2:Data.Functor.Yoneda lens-4.16.1:Control.Lens.At
+                         lens-4.16.1:Control.Lens.Internal.Indexed
+                         lens-4.16.1:Control.Lens.Reified lens-4.16.1:Control.Lens.Tuple
+                         lens-4.16.1:Control.Lens.Wrapped lens-4.16.1:Control.Lens.Zoom
+                         network-transport-0.5.2:Network.Transport
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         profunctors-5.2.2:Data.Profunctor.Composition
+                         profunctors-5.2.2:Data.Profunctor.Rep tagged-0.8.5:Data.Tagged
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         th-abstraction-0.2.10.0:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         unordered-containers-0.2.9.0:Data.HashSet
+                         vector-0.12.0.2:Data.Vector vector-0.12.0.2:Data.Vector.Primitive
+                         vector-0.12.0.2:Data.Vector.Storable
+                         vector-0.12.0.2:Data.Vector.Unboxed
+                         vector-0.12.0.2:Data.Vector.Unboxed.Base
+import  -/  abstract-par-0.3.3:Control.Monad.Par.Class 4e941bab5040e97e5f4d4cd892bceb56
+import  -/  base-4.11.1.0:Control.Concurrent ef40f102578b6e7296c2a2358b631ee7
+import  -/  base-4.11.1.0:Control.Monad.IO.Class 96109c36cb3c919872278540487fa39e
+import  -/  base-4.11.1.0:Data.Either 39d922b371c4c52d426e9ee66de8371a
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Conc.Sync 0f06fc4d7792ea35160385e7175366ba
+import  -/  base-4.11.1.0:GHC.MVar 5887537e57bb20af86721190334ddceb
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  base-4.11.1.0:System.Environment 06420d98d10ee04b8dda9c0d88032c55
+import  -/  base-4.11.1.0:System.IO e02b6055b5362a3eac04f83991602a53
+import  -/  bytestring-0.10.8.2:Data.ByteString 273248cbc494640ee3139e6d00588e9f
+import  -/  bytestring-0.10.8.2:Data.ByteString.Char8 801fee6d15f5471654463d991475364a
+import  -/  bytestring-0.10.8.2:Data.ByteString.Internal dc7d0c96ef45c703ca21607112260299
+import  -/  bytestring-0.10.8.2:Data.ByteString.Lazy 9b14d99e53cf2d30c74c7ddcd59ad2e2
+import  -/  containers-0.5.11.0:Data.Map 0dbdaec812ef695a364aa6c69e7f7d53
+import  -/  containers-0.5.11.0:Data.Map.Internal 0150e210d0ae8df0f3a0669d5e32d8fa
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  lens-4.16.1:Control.Lens 532019473786772c921a68b9043e1684
+import  -/  lens-4.16.1:Control.Lens.Getter c3a50fe525c9191ea4f0fb36da41d87d
+import  -/  lens-4.16.1:Control.Lens.Setter 8b49db9931c6d2c1ff9f3e914948402f
+import  -/  lens-4.16.1:Control.Lens.TH 80943a68b2537f54a227cfb1385e8e44
+import  -/  lens-4.16.1:Control.Lens.Type 79743c50f73260ff25de1cf66b4745da
+import  -/  monad-par-0.3.4.8:Control.Monad.Par 53c55b88281646a429f868768b0c00b0
+import  -/  monad-par-0.3.4.8:Control.Monad.Par.IO 313e5d0a5d2a4b3634326e1ea5dd5326
+import  -/  monad-par-0.3.4.8:Control.Monad.Par.Scheds.TraceInternal 7a51ea5a6cd8c29853b0837171e06d11
+import  -/  network-2.6.3.6:Network.Socket ad6c399a864f4064035be687dd16ffec
+import  -/  network-2.6.3.6:Network.Socket.Internal af2cb1ca411a338f4846b994baabce94
+import  -/  network-transport-0.5.2:Network.Transport 18cb17ad2d91e2c94ab38d1745341964
+import  -/  network-transport-tcp-0.6.0:Network.Transport.TCP d6ded0b4157015b7eac3885c8e60206e
+import  -/  stm-2.4.5.1:Control.Concurrent.STM.TVar 17f0d58b753eebd51af9c5bea2cff66f
+e9b2e28bddd304d88e68d55f2de01ad8
+  $sfind1 ::
+    Network.Transport.ConnectionId
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a -> a
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   (w :: Network.Transport.ConnectionId)
+                   (w1 :: Data.Map.Internal.Map Network.Transport.ConnectionId a) ->
+                 case w of ww { GHC.Word.W64# ww1 ->
+                 NetworkUtils.$wpoly_go13 @ a ww1 w1 }) -}
+6edcfa4bf48a4d82a609bdba57ddd386
+  $tc'ServerMaster :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11343008590526523829##
+                   6050659548406489979##
+                   NetworkUtils.$trModule
+                   NetworkUtils.$tc'ServerMaster2
+                   0#
+                   NetworkUtils.$tc'ServerMaster1) -}
+604e8260833b23ce00092dbc1dce49dd
+  $tc'ServerMaster1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+9cd64c3038495ca2e9ca518bf317242b
+  $tc'ServerMaster2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS NetworkUtils.$tc'ServerMaster3) -}
+e13ce87e79f3843beccf08296663adec
+  $tc'ServerMaster3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'ServerMaster"#) -}
+d90d36ca3af01d5f1f780bd80d29ee1a
+  $tcServerMaster :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4807527054119991111##
+                   7086151056275340759##
+                   NetworkUtils.$trModule
+                   NetworkUtils.$tcServerMaster1
+                   0#
+                   GHC.Types.krep$*) -}
+ecb13ce4b0163011e84da6af0ac1f9f3
+  $tcServerMaster1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS NetworkUtils.$tcServerMaster2) -}
+ea3ab68983903e65a8ae3a49834c8bdc
+  $tcServerMaster2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ServerMaster"#) -}
+be197a08bc546750bf891ba739f1f9ef
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   NetworkUtils.$trModule3
+                   NetworkUtils.$trModule1) -}
+a381306b523135bdd4b1b574a248a28d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS NetworkUtils.$trModule2) -}
+1bf9fcc611cb065948eef76a95b36200
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("NetworkUtils"#) -}
+d9dbddc09c5aef1f39a21a0865267f52
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS NetworkUtils.$trModule4) -}
+51b49fa8a74e297f94005afae523431a
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("utils-0.1.0.0-ruQcw8wBHGC0OCiXN6O03"#) -}
+d1e4166ce2842e16b820317d06beb21c
+  $w$sgo1 ::
+    Network.Transport.ConnectionId
+    -> GHC.Prim.Word#
+    -> a1
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a1
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a1
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,1*U>, Inline: [0] -}
+0155244b0a0d6d546bac5801705df15f
+  $w$sgo13 ::
+    GHC.Prim.Word#
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a1
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a1
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
+ddb122bb8718da5502d66d3bdb2a833c
+  $wpoly_go13 ::
+    GHC.Prim.Word#
+    -> Data.Map.Internal.Map Network.Transport.ConnectionId a -> a
+  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
+5904aa862d0000682eac0b58c97f4b7f
+  type MasterRequestHandler =
+    NetworkUtils.ServerMaster
+    -> Network.Transport.ConnectionId
+    -> Data.ByteString.Internal.ByteString
+    -> Control.Monad.Par.IO.ParIO ()
+6eceb95f71766d81c81ef508cc64238a
+  data ServerMaster
+    = ServerMaster {_connMap :: Data.Map.Internal.Map
+                                  Network.Transport.ConnectionId
+                                  (GHC.MVar.MVar Network.Transport.Connection),
+                    _workersList :: GHC.MVar.MVar [Network.Transport.Connection],
+                    _isWaiting :: Data.Map.Internal.Map
+                                    Network.Transport.ConnectionId
+                                    (GHC.Conc.Sync.TVar GHC.Types.Bool)}
+6eceb95f71766d81c81ef508cc64238a
+  _connMap ::
+    NetworkUtils.ServerMaster
+    -> Data.Map.Internal.Map
+         Network.Transport.ConnectionId
+         (GHC.MVar.MVar Network.Transport.Connection)
+  RecSel Left NetworkUtils.ServerMaster
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster ds1 ds2 ds3 ->
+                 ds1 }) -}
+6eceb95f71766d81c81ef508cc64238a
+  _isWaiting ::
+    NetworkUtils.ServerMaster
+    -> Data.Map.Internal.Map
+         Network.Transport.ConnectionId (GHC.Conc.Sync.TVar GHC.Types.Bool)
+  RecSel Left NetworkUtils.ServerMaster
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster ds1 ds2 ds3 ->
+                 ds3 }) -}
+6eceb95f71766d81c81ef508cc64238a
+  _workersList ::
+    NetworkUtils.ServerMaster
+    -> GHC.MVar.MVar [Network.Transport.Connection]
+  RecSel Left NetworkUtils.ServerMaster
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster ds1 ds2 ds3 ->
+                 ds2 }) -}
+ed5819575ab39004b07d97bd52b2fed8
+  connMap ::
+    Control.Lens.Type.Lens'
+      NetworkUtils.ServerMaster
+      (Data.Map.Internal.Map
+         Network.Transport.ConnectionId
+         (GHC.MVar.MVar Network.Transport.Connection))
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: Data.Map.Internal.Map
+                            Network.Transport.ConnectionId
+                            (GHC.MVar.MVar Network.Transport.Connection)
+                          -> f (Data.Map.Internal.Map
+                                  Network.Transport.ConnectionId
+                                  (GHC.MVar.MVar Network.Transport.Connection)))
+                   (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster x1 x2 x3 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ (Data.Map.Internal.Map
+                        Network.Transport.ConnectionId
+                        (GHC.MVar.MVar Network.Transport.Connection))
+                   @ NetworkUtils.ServerMaster
+                   (\ (y1 :: Data.Map.Internal.Map
+                               Network.Transport.ConnectionId
+                               (GHC.MVar.MVar Network.Transport.Connection)) ->
+                    NetworkUtils.ServerMaster y1 x2 x3)
+                   (f1 x1) }) -}
+ca9efca24a7ed341e5008001edd0fb2c
+  connectToServer ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Types.IO
+         (Data.Either.Either
+            GHC.Base.String
+            (Network.Transport.Connection, Network.Transport.EndPoint))
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                NetworkUtils.connectToServer1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0]
+                               <Data.Either.Either
+                                  GHC.Base.String
+                                  (Network.Transport.Connection, Network.Transport.EndPoint)>_R)) -}
+16edd837df8b6768b594254d26c01151
+  connectToServer1 ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.Either.Either
+            GHC.Base.String
+            (Network.Transport.Connection, Network.Transport.EndPoint) #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: (\ (serverAddr :: GHC.Base.String)
+                   (port :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Network.Transport.TCP.createTransport2
+                        NetworkUtils.connectToServer_host
+                        port
+                        (\ (ds :: Network.Socket.ServiceName)[OneShot] ->
+                         (NetworkUtils.connectToServer_host, port))
+                        Network.Transport.TCP.defaultTCPParameters
+                        eta of ds { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   Data.Either.Left x
+                   -> NetworkUtils.connectToServer6
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Data.Either.Either
+                              GHC.Base.String
+                              (Network.Transport.Connection, Network.Transport.EndPoint)>_R)
+                        ipv
+                   Data.Either.Right y
+                   -> case y of wild1 { (,) x ds1 ->
+                      case x of wild2 { Network.Transport.Transport ds2 ds3 ->
+                      case ds2
+                             `cast`
+                           (GHC.Types.N:IO[0]
+                                <Data.Either.Either
+                                   (Network.Transport.TransportError
+                                      Network.Transport.NewEndPointErrorCode)
+                                   Network.Transport.EndPoint>_R)
+                             ipv of ds4 { (#,#) ipv2 ipv3 ->
+                      case ipv3 of wild3 {
+                        Data.Either.Left ipv4
+                        -> NetworkUtils.connectToServer3
+                             `cast`
+                           (GHC.Types.N:IO[0]
+                                <Data.Either.Either
+                                   GHC.Base.String
+                                   (Network.Transport.Connection, Network.Transport.EndPoint)>_R)
+                             ipv2
+                        Data.Either.Right endpoint
+                        -> case endpoint of wild4 { Network.Transport.EndPoint ds5 ds6 ds7 ds8 ds9 ds10 ->
+                           case (ds7
+                                   (Data.ByteString.Internal.packChars serverAddr)
+                                     `cast`
+                                   (Sym (Network.Transport.N:EndPointAddress[0]))
+                                   Network.Transport.ReliableOrdered
+                                   Network.Transport.defaultConnectHints)
+                                  `cast`
+                                (GHC.Types.N:IO[0]
+                                     <Data.Either.Either
+                                        (Network.Transport.TransportError
+                                           Network.Transport.ConnectErrorCode)
+                                        Network.Transport.Connection>_R)
+                                  ipv2 of ds11 { (#,#) ipv4 ipv5 ->
+                           case ipv5 of wild5 {
+                             Data.Either.Left err
+                             -> (# ipv4,
+                                   Data.Either.Left
+                                     @ GHC.Base.String
+                                     @ (Network.Transport.Connection, Network.Transport.EndPoint)
+                                     (case err of ww2 { Network.Transport.TransportError ww3 ww4 ->
+                                      GHC.CString.unpackAppendCString#
+                                        Network.Transport.$fExceptionTransportError8
+                                        (Network.Transport.$w$cshowsPrec1
+                                           ww3
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.showSpace1
+                                              (GHC.Types.:
+                                                 @ GHC.Types.Char
+                                                 GHC.Show.$fShow(,)3
+                                                 (GHC.Show.showLitString
+                                                    ww4
+                                                    NetworkUtils.connectToServer2)))) }) #)
+                             Data.Either.Right conn
+                             -> (# ipv4,
+                                   Data.Either.Right
+                                     @ GHC.Base.String
+                                     @ (Network.Transport.Connection, Network.Transport.EndPoint)
+                                     (conn, wild4) #) } } } } } } } } }) -}
+72e46e094f18c184867431d7b2b96c88
+  connectToServer2 :: [GHC.Types.Char]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.$fShow(,)3
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+fe6d28f3e8f0c14ab2f795a07e5698d9
+  connectToServer3 ::
+    GHC.Types.IO
+      (Data.Either.Either
+         GHC.Base.String
+         (Network.Transport.Connection, Network.Transport.EndPoint))
+  {- Unfolding: (GHC.Magic.noinline
+                   @ (forall a. [GHC.Types.Char] -> GHC.Types.IO a)
+                   GHC.IO.failIO1
+                     `cast`
+                   (forall (a :: <*>_N).
+                    <GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <a>_R))
+                   @ (Data.Either.Either
+                        GHC.Base.String
+                        (Network.Transport.Connection, Network.Transport.EndPoint))
+                   NetworkUtils.connectToServer4) -}
+fb91226f76100d9d376cc242a41aec9e
+  connectToServer4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   NetworkUtils.connectToServer5) -}
+0a75c7166473972861e7fece60631ffa
+  connectToServer5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Pattern match failure in do expression at src/NetworkUtils.hs:35:3-16"#) -}
+bc4e4926f8be88b3361d3d56edaa56f4
+  connectToServer6 ::
+    GHC.Types.IO
+      (Data.Either.Either
+         GHC.Base.String
+         (Network.Transport.Connection, Network.Transport.EndPoint))
+  {- Unfolding: (GHC.Magic.noinline
+                   @ (forall a. [GHC.Types.Char] -> GHC.Types.IO a)
+                   GHC.IO.failIO1
+                     `cast`
+                   (forall (a :: <*>_N).
+                    <GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <a>_R))
+                   @ (Data.Either.Either
+                        GHC.Base.String
+                        (Network.Transport.Connection, Network.Transport.EndPoint))
+                   NetworkUtils.connectToServer7) -}
+7c00984b1c1becec2560ba586b347789
+  connectToServer7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   NetworkUtils.connectToServer8) -}
+6869923526f790aa6f648eebc0d6378e
+  connectToServer8 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("Pattern match failure in do expression at src/NetworkUtils.hs:34:3-17"#) -}
+57104ef5e60614d4c15d6c7b308f4e4e
+  connectToServer9 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("127.0.0.1"#) -}
+26c028bbc0ca465c62a23d366e7297ff
+  connectToServer_host :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   NetworkUtils.connectToServer9) -}
+8d6ea0a70b2739c214059308b4976764
+  isWaiting ::
+    Control.Lens.Type.Lens'
+      NetworkUtils.ServerMaster
+      (Data.Map.Internal.Map
+         Network.Transport.ConnectionId (GHC.Conc.Sync.TVar GHC.Types.Bool))
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: Data.Map.Internal.Map
+                            Network.Transport.ConnectionId (GHC.Conc.Sync.TVar GHC.Types.Bool)
+                          -> f (Data.Map.Internal.Map
+                                  Network.Transport.ConnectionId
+                                  (GHC.Conc.Sync.TVar GHC.Types.Bool)))
+                   (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster x1 x2 x3 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ (Data.Map.Internal.Map
+                        Network.Transport.ConnectionId (GHC.Conc.Sync.TVar GHC.Types.Bool))
+                   @ NetworkUtils.ServerMaster
+                   (\ (y1 :: Data.Map.Internal.Map
+                               Network.Transport.ConnectionId
+                               (GHC.Conc.Sync.TVar GHC.Types.Bool)) ->
+                    NetworkUtils.ServerMaster x1 x2 y1)
+                   (f1 x3) }) -}
+483b95bf940faa7330e3ee33019f5fc8
+  runDefaultMaster ::
+    NetworkUtils.MasterRequestHandler -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,C(C1(C1(C1(U))))><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                NetworkUtils.runDefaultMaster1
+                  `cast`
+                (<NetworkUtils.MasterRequestHandler>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+ef3200ffa4306b4c7555eea3e1d17676
+  runDefaultMaster1 ::
+    NetworkUtils.MasterRequestHandler
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,C(C1(C1(C1(U))))><S,U> -}
+25d66d75bd2ba5d426a1ac918f7212d5
+  workersList ::
+    Control.Lens.Type.Lens'
+      NetworkUtils.ServerMaster
+      (GHC.MVar.MVar [Network.Transport.Connection])
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: GHC.MVar.MVar [Network.Transport.Connection]
+                          -> f (GHC.MVar.MVar [Network.Transport.Connection]))
+                   (ds :: NetworkUtils.ServerMaster) ->
+                 case ds of wild { NetworkUtils.ServerMaster x1 x2 x3 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ (GHC.MVar.MVar [Network.Transport.Connection])
+                   @ NetworkUtils.ServerMaster
+                   (\ (y1 :: GHC.MVar.MVar [Network.Transport.Connection]) ->
+                    NetworkUtils.ServerMaster x1 y1 x3)
+                   (f1 x2) }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

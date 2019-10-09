@@ -34,6 +34,7 @@ library
       , binary
       , utils
       , sqlite-simple
+      , easy-file
   default-language:    Haskell2010
 
 executable dbworker

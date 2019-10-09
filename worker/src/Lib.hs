@@ -17,6 +17,7 @@ import qualified Data.Map.Strict            as Map
 import           Data.IORef                 (IORef, modifyIORef, newIORef, readIORef)
 import           Messages
 import           Control.Monad.Catch
+import           Text.Read                  (readMaybe)
 
 data Value = IntValue Int | StringValue String | BoolValue Bool | LambdaValue LambdaDef deriving (Show)
 
@@ -43,9 +44,58 @@ type LoadCallback = (String -> IO DBMessage)
 data DB = DB { publish :: PublishCallback
              , load    :: LoadCallback}
 
+type PredefinedFunction = [Value] -> Either CompilationException Value
+
 executeScript :: Program -> DB -> IO ProgramResult
 executeScript prog db = execScript Map.empty prog
   where
+    toString :: PredefinedFunction
+    toString [] = Right $ StringValue ""
+    toString (x : []) = Right $ StringValue $ showValue x
+    toString (x : r) = case toString r of
+      Right (StringValue suffix) -> Right $ StringValue $ (showValue x) ++ ", " ++ suffix
+      ex                         -> ex
+    
+    showValue :: Value -> String
+    showValue v = case v of 
+      IntValue x -> (show x)
+      StringValue x -> (show x)
+      BoolValue x -> (show x)
+      LambdaValue (LambdaDef names _) -> "lambda" ++ (show names)
+
+    toInt :: PredefinedFunction
+    toInt [] = Left $ CompilationException "Function toInt expectes exactly 1 argument but 0 were provided"
+    toInt (v : []) = case v of 
+      IntValue _ -> Right $ v
+      StringValue s -> case (readMaybe s :: Maybe Int) of 
+        Just x -> Right $ IntValue x
+        _      -> Left $ CompilationException $ "String \"" ++ s  ++ "\" can't be converted to Int type"
+      BoolValue b   -> case b of
+       True  -> Right $ IntValue 1
+       False -> Right $ IntValue 0
+      LambdaValue _ -> Left $ CompilationException $ "Lambdas can't be converted to Int type"
+    toInt args = Left $ CompilationException $ "Function toInt expectes exactly 1 argument but " ++ (show $ length args) ++  " were provided"
+
+    toBool :: PredefinedFunction
+    toBool [] = Left $ CompilationException "Function toBool expectes exactly 1 argument but 0 were provided"
+    toBool (v : []) = case v of
+     IntValue x    -> Right $ BoolValue $ x == 0
+     StringValue s -> Right $ BoolValue $ s == "True"
+     BoolValue _   -> Right $ v
+     LambdaValue _ -> Left $ CompilationException $ "Lambdas can't be converted to Int type"
+    toBool args = Left $ CompilationException $ "Function toInt expectes exactly 1 argument but " ++ (show $ length args) ++  " were provided"
+
+    substring :: PredefinedFunction
+    substring args = case args of
+      (sv : lv : lenv : []) -> case sv of 
+        StringValue s -> case lv of
+          IntValue l -> case lenv of
+            IntValue len -> Right $ StringValue $ drop l $ take (l + len) s
+            _          -> Left  $ CompilationException $ "Function substring expectes int as third argument but " ++ (show lenv) ++  " were provided"
+          _ -> Left $ CompilationException $ "Function substring expectes int as second argument but " ++ (show lv) ++  " were provided"
+        _ -> Left $ CompilationException $ "Function substring expectes string as first argument but " ++ (show sv) ++  " were provided"
+      _ -> Left $ CompilationException $ "Function substring expectes exactly 3 arguments but " ++ (show $ length args) ++  " were provided"
+
     execScript :: VariableMap -> Program -> IO ProgramResult
     execScript initMap = (executeScriptWithContext initMap) . executeProgramWithErrors
 
@@ -205,16 +255,38 @@ executeScript prog db = execScript Map.empty prog
             LambdaValue _ -> throwM $ CompilationException "Unexpected lambda expression in operator statement"
 
     evaluateExpr (InvocationExpression (Invocation name args)) = do
-      mapRef  <- ask
-      map_    <- liftIO $ readIORef mapRef
-      case (Map.lookup name map_) of
-        Just value -> case value of 
-          LambdaValue lambda -> do
-            values <- evaluateExprs args
-            res <- liftIO $ invokeLambda lambda values
-            return res
-          _ -> throwM $ CompilationException $ "Variable \"" ++ name ++ "\" is not a lambda"
-        Nothing -> throwM $ CompilationException $ "Lambda variable \"" ++ name ++ "\" was not found"
+      case name of 
+        "toString" -> do
+          values <- evaluateExprs args
+          case toString values of
+            Left  e -> throwM e
+            Right v -> return v
+        "toInt"    ->  do
+          values <- evaluateExprs args
+          case toInt values of
+            Left  e -> throwM e
+            Right v -> return v
+        "toBool"    ->  do
+          values <- evaluateExprs args
+          case toBool values of
+            Left  e -> throwM e
+            Right v -> return v
+        "substring"    ->  do
+          values <- evaluateExprs args
+          case substring values of
+            Left  e -> throwM e
+            Right v -> return v
+        _          -> do
+          mapRef  <- ask
+          map_    <- liftIO $ readIORef mapRef
+          case (Map.lookup name map_) of
+            Just value -> case value of 
+              LambdaValue lambda -> do
+                values <- evaluateExprs args
+                res <- liftIO $ invokeLambda lambda values
+                return res
+              _ -> throwM $ CompilationException $ "Variable \"" ++ name ++ "\" is not a lambda"
+            Nothing -> throwM $ CompilationException $ "Lambda variable \"" ++ name ++ "\" was not found"
     evaluateExpr (ConstantExpression c) = do
       case c of 
         IntConstant i    -> return $ IntValue i

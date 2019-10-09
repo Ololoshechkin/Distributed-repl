@@ -35,6 +35,8 @@ library
       , binary
       , lens
       , stm
+      , abstract-par
+      , monad-par
   default-language:    Haskell2010
 
 test-suite utils-test
