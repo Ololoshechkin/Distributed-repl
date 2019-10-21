@@ -1,15 +1,18 @@
 # haskell_project
 
-Проект распределенный и состоит из следующих независимых компонент: 
+The project is distributed and is composed by the following components: 
 
-1. Клиент с UI, где есть поле для ввода кода, поле с выводом результата, кнопки compile, open, save и quit: 
+1. Client with UI:
+* Code text field
+* Program result label
+* Buttons: compile, open, repl mode, save и quit: 
 
 ![Image 1](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image1.png)
 ![Image 2](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image2.png)
 ![Image 3](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image3.png)
  
 
-Также всплывающие сообщения о различных (сетевых/парсинга/компиляции) ошибках.
+If any error (network error/parsing error/compilation error) happens there is an error message window for that:
 
 
 ![Image 4](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image4.png)
@@ -17,17 +20,15 @@
 ![Image 6](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image6.png)
 
 
-Клиент умеет парсить код на моем языке программирования, сериализовать AST в байты и отправлять мастеру.
+A client parses source code written on a programming language designed by myself, then the client serializes the AST of the code and sends to master.
 
-Также (new feature) есть режим Repl Mode, в котором клиент посылает фрагменты кода (либо statements, либо expressions),
-которые исполняются с использованием переменных, созданных ранее. statements могут менять Repl стейт на remote,
-а expressions подлежат вычислению и выводу значений на экран:
+Also (new feature) there is a Repl Mode that allows client to send code fragments (statements or expressions) to execute/evaluate. In case of statements a Repl state of the client changes remotely:
 
 ![Image 8](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image8.png)
 
 ![Image 9](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image9.png)
 
-Грамматика поддерживаемого языка:
+Grammar of my language that I support:
 
 * Program = (Statement*) ReturnStatement
 * Statement = (Assignment | Loop | Invocation | DBComand)
@@ -62,7 +63,7 @@ Note: '##' is an equivalent of integer operator '+' but for Strings
 * Key = BracesExpression of type String
 * ReturnStatement = 'return' Expression
 
-Пример программы:
+Valid program example:
 
 
 ```
@@ -86,19 +87,15 @@ LOAD (s) q
 return q 
 ```
 
-Результатом ее работы будет записанный и прочитанный файл с названием "aycycy" и вывод "aaa"
+It's result is a database value for the key "aycycy" assigned to "aaa" and program output is "aaa".
 
-2. Мастер:
-Слушает подключения клиентов и подключения новых воркеров (система динамическая, воркеры могут появляться и исчезать). 
-- Получает запрос от клиента в виде АСТ программы, шлет одному из доступных воркеров (случайному),
-  шлет ему id клиента и программу, забывает про запрос.
-- Получает RegisterWorker от нового воркера, добавляет его в список готовых к работе,
-- Получает CompilationError + описание + id клиента — шлет клиенту (id) чтоб тот нарисовал окошко ошибки
-- Получает Result + результат (строку) + id клиента — шлет клиенту (id) чтобы тот показал результат
-
-Мастер асинхронный и параллельный, не ждет ни чьего ответа, только перегоняет запросики кому надо и забывает,
-а также держит мапу соединений и доступных воркеров. Также поддерживается случай, когда воркеров на данный
-момент нет, в этом случае клиентский поток будет ждать, когда воркер появится.
+2. Master:
+Listens for new client and worker connections. Master is fully async, processes requests in parallel and supports dynamic connections/disconnections of workers.
+Master reacts on the following requests:
+- Receives ClienRequest (AST of a program to compile). Sends WorkerRequest(ClientRequest + ID of the client) to randomly-chosen worker that is currently availabele, then master forgets about the request.
+- Receives RegisterWorker from new worker, adds it to the list of available workers.
+- Receives CompilationError(description) + ID of a client. Sends CompilationError(description) to the client with ID.
+- Receives Result(program output) + ID of the client. Sends Result(program output) to the client with ID.
 
 3. Воркер:
 Подключается к мастеру, шлет RegisterWorker.
