@@ -97,91 +97,91 @@ Master reacts on the following requests:
 - Receives CompilationError(description) + ID of a client. Sends CompilationError(description) to the client with ID.
 - Receives Result(program output) + ID of the client. Sends Result(program output) to the client with ID.
 
-3. Воркер:
-Подключается к мастеру, шлет RegisterWorker.
-Ждет запорсов от мастера, при получении запроса — делает fork, исполняет код программы, 
-при необходимости общается с БД, 
-высылает результат назад мастеру по готовности (ошибка компиляции + описание -- тоже результат).
-В случае получении repl-запроса ведет себя аналогично обычной компиляции, но начинает исполнение с готового маппинга переменных (repl state), которое читает из базы данных. Засчет этого можно убивать воркеров, которые обрабатывают repl для какого-то из клиентов, и любой другой воркер продолжит с того же момента (клиент не умрет). После завершения исполнения repl-фрагмента или вычисления его результата - происходит запись в базу данных нового repl state.
+3. Worker:
+Connects to Master with sending RegisterWorker request.
+Keeps waiting for requests from Master
+Does fork on each request fom Master and executes given program. Also Worker talks to a Database if needed.
+When the result is ready Worker sends it to master. The result is either CompilationError(description) or ProgramResult(value)
+In case Worker gets Repl-request it reads initial Repl state from Database (Repl state contains all the enviroment including defined functions) and after execution any code in repl mode the worker writes new Repl state to the Database. This allows us to execute each repl block on any worker regardles of what was the previous one for this client.
 
-4. БД. Есть 4 типа запросов: 
-publish key value replication - запись (key, value) в таблицу ключей-значений на n=replication машин
-load key - чтение (value) из таблицы ключей-значений
-downloadMap cid  - чтение (map) из таблицы переменных для repl-state клиента cid
-uploadMap cid map - запись (cid, map) в таблицу переменных для repl-state клиента cid
-БД самописная, устроена так:
-4.1 БД-мастер.
-При получении запроса publish просто пихает его нужному replication числу БД-воркеров (они выбираются рандомно для redundancy).
-При получении load-запроса он пихает всем бд-воркерам и ждет любого первого ответившего.
+4. Database. Supports 4 types of queries: 
+* publish key value replication - writes (key, value) to the key-value storage replicated to at most n=replication machines.
+* load key - reads (value) from key-value storage
+* downloadMap cid  - reads (map of variables) from repl-state storage for the client with Id=cid
+* uploadMap cid map - writes (cid, map of variables) to the repl-state of the client with Id=cid
+
+Database is add-hock and is composed from the following layers:
+4.1 DB-master.
+In case of getting publish request DB-master propogates it to n=replication number of DB-workers (they are being chosen randomly for the sake of redundancy).
+In case of getting load-query DB-master sprays the request to all of DB-workers and waits for the first reply.
 Поведение download и upload запросов аналогично load и publish для replication=3
-Также БД-мастер умеет понимать, что появились новые БД-воркеры в процессе работы.
-БД-мастер асинхронный, но имеет таймауты для ответа на клиентские запросы.
-4.2 Бд-воркер
-Имеет две реализации, которые могут работать в одной системе вместе параллельно:
-4.2.1 Бд-воркер на файловой системе
-Слушает запросы и пишет на диск/читает с диска в файл с названием key пишет value. Последовательное исполнение.
-Слушает запросы и пишет на диск/читает с диска в файл с названием "cid.map" пишет map. Замечание: поддерживается запись на диск в том числе лямбд (произвольных программ). Последовательное исполнение.
-4.2.2 Бд-воркер на SQlite3
-Пишет в таблицы kvmaptable и replvarmap, аналогичен воркеру на ФС.
+Also DB-master is able to detect new DB-workers became available in runtime.
+Note: DB-master is asynchronous and client request time is guarded by timeouts.
+4.2 DB-worker:
+There are two implementations of DB-worker that can be both used in the same system:
+4.2.1 DB-worker using file system
+Listens for new requests and reads/writes to a disk.
+For publish(key, value)/load(key) it works with file with a name "key" containing the corresponding value. Execution is sequential.
+For publishMap(cid, map)/loadMap(cid) it works with file "%cid%.map" containing repl state.
+4.2.2  DB-worker using SQlite3
+Works with tables: kvmaptable and replvarmap.
 
-Смысл БД в том, что в коде есть команды load k и publish k v r.
-И если несколько клиннтов, то они могут шарить общие переменные или переиспользовать старые.
+Note: Database allows different clients to share common variables.
 
-Пример "чата" с использованием БД:
+Example of a chat using Database:
 
 ![Image 7](https://github.com/Ololoshechkin/haskell_project/raw/master/screenshots/image7.png)
 
-Указания по запуску:
-1. Запускаем мастера
+Notes (how to run):
+1. Run master
 
-аргументы: master host, master port
+arguments: master host, master port
 ```
 stack run master "127.0.0.1" "8999"
 ```
-2. Запускаем БД-мастера (пункты 1 и 2 можно поменять местами)
+2. Run DB-master
 	
-аргументы: dbmaster host, dbmaster port
+arguments: dbmaster host, dbmaster port
 ```
 stack run dbmaster "127.0.0.1" "9997"
 ```
-3. Запускаем Воркеров (сколько угодно)
+3. Run Worker(s) (any number of workers >= 1 is fine)
 	
-аргументы: master address (выводится мастером при запуске), dbmaster address (выводится БД-мастером при запуске), порт на котором слушать мастера, порт на котором слушать БД-мастера
+arguments: master address (is printed in master shell), dbmaster address (is printed in DB-master shell), port for connecting to master, port for connecting to DB-master
 ```
 stack run worker "127.0.0.1:8999:0" "127.0.0.1:9997:0" "2998" "1999"
 ```
-4. Запускаем БД-воркеров (сколько угодно)
+4. Run DB-workre(s) (any number of them >= 1)
 
-аргументы: dbmaster address, порт на котором слушать БД-мастера, "fs" или "sql" -- какую технологию использовать для данного воркера
+arguments: dbmaster address, port for connecting to DB-master, "fs" or "sql" -- implementation of DB-worker
 ```
 stack run dbworker "127.0.0.1:9997:0" "6995" fs
 ```
-5. Запускаем клиента (опять же, сколько угодно)
+5. Run client(s)
 	
-аргументы: master address, порт на котором слушать мастера
+arguments: master address, port for listening to Master
 ```
 stack run client "127.0.0.1:8999:0" "7777"
 ```
 
-Notes (отказоустойчивость):
-* Если воркер умирает, система продолжает работать. При наличии другого воркера клиенты продолжают получать результаты компиляции.
-* Если умер последний воркер --- система работает, но клиенты получают таймаут и рисуют окошко с сообщением.
-* Если умер БД-воркер --- система продолжает работать. Клиенты продолжают работать с базой данных если их файлы были записаны с достаточной репликацией, иначе запросы к БД могут начать отваливаться по таймауту.
-* При перезапуска БД-воркера на той же машине файлы на диске сохраняются.
-* При падении БД-мастера падают все БД-воркеры. Все подключенные к нему обычные воркеры продолжают отвечать на запросы компиляции, не затрагивающие БД.
-* При падении мастера падают все воркеры. Клиент не падает, но перестает отвечать на новые запросы компиляции
+Notes (reliability):
+* In case worker dies the system is still alive and works fine. In case of any other worker exists clients switch to it.
+* If the last worker is dead --- system is still alive but clients don't get any result from master and show "Timeout exceeded" window.
+* If a DB-worker dies --- system still works fine and most likely no data is lost in case it was written with a propper replication.
+* DB-worker can be recovered with the same state.
+* In case DB-master dies all DB-workers die. But Workers can still compile programs without Database queries.
+* In case Master dies all workers die. Client shows message that Master is unavailable and the client can't do anything useful from now on.
 
-Затронутые технологии:
+Touched technologies:
 * UI (qtah)
-* Приложение распределенное
-* Использует сетевое взаимодействие
-* Взаимодействие с файловой системой
-* База данных (SQLite)
+* Distributed systems
+* Network-tcp
+* File system usage
+* Database (SQLite)
 
-Затронутые конструкции:
-* Монады отличные от IO: MonadRandom, ParIO
-* Трансформеры монад: ReaderT
-* Парсер комбинаторы: Вся грамматика скрипта
-* Параллельность и Concurrency: PAR, fork, IVar, MVar, TVar и операции с ними
-* Линзы: Template haskell+линзы для Server state.
-
+Used language features:
+* Monads: IO, MonadRandom, ParIO
+* Monad transformers: ReaderT
+* Parser-combinators (megaparsec)
+* Parallelism and Concurrency: PAR, fork, IVar, MVar, TVar and operations with them
+* Lenses: Template haskell+lenses for Server state.
