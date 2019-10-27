@@ -1,4 +1,4 @@
-# haskell_project
+# Distributed repl
 
 The project is distributed and is composed by the following components: 
 
